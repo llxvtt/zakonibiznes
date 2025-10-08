@@ -1,0 +1,24 @@
+// containers
+body {
+      background-color: #edf0f5;
+}
+.container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 25px;
+}
+
+section {
+      padding: 62px 0;
+}
+
+.section__top {
+      margin-bottom: 34px;
+      &-title {
+            color: var(--text-darkblue);
+            text-transform: uppercase;
+      }
+      &-desc {
+            margin-top: 14px;
+      }
+}

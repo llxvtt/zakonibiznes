@@ -1,0 +1,21 @@
+// base
+@use "./base/reset";
+@use "./base/typography";
+// utils
+@use "./utils/variables";
+@use "./utils/style";
+// components
+@use "./components/header";
+@use "./components/hero";
+@use "./components/card";
+@use "./components/benefits";
+@use "./components/services";
+@use "./components/banner";
+@use "./components/articles";
+@use "./components/faq";
+@use "./components/reviews";
+@use "./components/location";
+@use "./components/footer";
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");

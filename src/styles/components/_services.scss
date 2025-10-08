@@ -1,0 +1,49 @@
+@use "../utils/mixins" as *;
+.services {
+      &__cards {
+            @include grid(4, 34px);
+      }
+      &__card:first-child {
+            position: relative;
+            grid-column: span 2;
+            background-color: var(--background-darkblue);
+            .card__info {
+                  &-title {
+                        font-weight: 700;
+                        font-style: Bold;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: white;
+                  }
+                  &-desc {
+                        color: white;
+                  }
+            }
+            .card__bottom {
+                  &-price {
+                        color: white;
+                  }
+                  &-btn {
+                        max-width: max-content !important;
+                  }
+            }
+      }
+      &__card:first-child::after {
+            content: url("/src/assets/images/symbol.svg");
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+      }
+}
+
+.services-second {
+      .services__card:first-child {
+            background-color: var(--background-red) !important;
+            .card__info {
+                  &-title {
+                        max-width: 300px;
+                  }
+            }
+      }
+}

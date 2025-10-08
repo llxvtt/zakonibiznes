@@ -1,0 +1,80 @@
+@use "../utils/mixins" as *;
+
+.header {
+      &__top {
+            padding: 24px 0;
+            .container {
+                  @include flex-between;
+            }
+      }
+      &__search {
+            @include flex-center;
+            gap: 14px;
+            transform: translateX(-13px);
+            &-input {
+                  width: 340px;
+                  height: 50px;
+                  padding: 0 24px;
+                  border: 2px solid #1d427933;
+                  border-radius: 8px;
+
+                  font-family: "Montserrat";
+                  font-weight: 600;
+                  font-size: 15px;
+                  line-height: 100%;
+            }
+            &-input::placeholder {
+                  font-family: "Montserrat";
+                  font-weight: 600;
+                  font-size: 15px;
+                  line-height: 100%;
+                  color: #1d427980;
+            }
+
+            // header search btn
+            &-btn {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 8px;
+                  background-color: var(--btn-red);
+            }
+      }
+      &__contact {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            &-phone {
+                  @include flex-center;
+                  gap: 20px;
+                  span {
+                        font-weight: 700;
+                        font-style: Bold;
+                        font-size: 16px;
+                        line-height: 100%;
+                        color: var(--text-darkblue);
+                  }
+            }
+      }
+
+      //   header nav
+      &__nav {
+            padding: 20px 0;
+            background-color: white;
+            border-top: 1px solid #1d427933;
+            border-bottom: 1px solid #1d427933;
+      }
+      &__menu {
+            @include flex-between;
+            &-link {
+                  @include flex-center;
+                  gap: 14px;
+
+                  font-weight: 700;
+                  font-style: Bold;
+                  font-size: 14px;
+                  line-height: 100%;
+                  text-transform: uppercase;
+                  color: var(--text-darkblue);
+            }
+      }
+}

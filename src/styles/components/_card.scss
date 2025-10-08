@@ -1,0 +1,45 @@
+@use "../utils/mixins" as *;
+
+.card {
+      padding: 24px;
+      border-radius: 8px;
+      background-color: #ffffffa3;
+      display: grid;
+      grid-template-rows: auto max-content;
+
+      //  card info
+      &__info {
+            max-width: 388px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            &-icon {
+                  margin-bottom: 18px;
+                  width: 28px;
+            }
+            &-title {
+                  color: #1d4279;
+            }
+            &-desc {
+                  margin-top: 14px;
+                  color: #1d427999;
+                  line-height: 25px;
+            }
+            &-btn {
+                  margin-top: 64px;
+            }
+      }
+
+      &__bottom {
+            margin-top: 34px;
+            &-price {
+                  width: 100%;
+                  color: var(--text-darkblue);
+                  margin-bottom: 24px;
+            }
+            &-btn {
+                  width: 100%;
+            }
+      }
+}

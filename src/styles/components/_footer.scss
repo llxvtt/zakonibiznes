@@ -1,0 +1,25 @@
+@use "../utils/mixins" as *;
+
+.footer {
+      border-top: 1px solid #1d427933;
+      padding: 24px 0;
+      .container {
+            @include flex-between;
+
+            span {
+                  font-family: "Montserrat";
+                  font-weight: 600;
+                  font-size: 14px;
+                  line-height: 24px;
+                  color: var(--text-darkblue);
+            }
+            a {
+                  font-family: "Montserrat";
+                  font-weight: 600;
+                  font-size: 14px;
+                  line-height: 24px;
+                  text-decoration: underline;
+                  color: var(--text-darkblue);
+            }
+      }
+}

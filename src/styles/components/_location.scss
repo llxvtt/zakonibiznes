@@ -1,0 +1,62 @@
+@use "../utils/mixins" as *;
+.location {
+      &__map {
+            width: 100%;
+            height: 524px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            position: relative;
+            iframe,
+            &-img {
+                  width: 100%;
+                  height: 100%;
+            }
+      }
+}
+
+.contact {
+      width: 576px;
+      padding: 24px;
+      padding-bottom: 28px;
+
+      background: white;
+      border-radius: 8px;
+
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+
+      &__title {
+            color: var(--text-darkblue);
+            line-height: 32px;
+      }
+      &__list {
+            margin-top: 24px;
+            display: grid;
+            gap: 19px;
+            &-item a {
+                  text-decoration: underline;
+            }
+            &-item a,
+            &-item {
+                  display: flex;
+                  align-items: center;
+                  gap: 19px;
+
+                  font-family: "Montserrat";
+                  font-weight: 700;
+                  font-style: Bold;
+                  font-size: 16px;
+                  line-height: 100%;
+                  color: var(--text-darkblue);
+            }
+      }
+
+      &__btns {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+      }
+}

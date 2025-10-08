@@ -1,0 +1,7 @@
+@use "../utils/mixins" as *;
+.benefits {
+      padding-top: 0;
+      .container {
+            @include grid(4, 34px);
+      }
+}

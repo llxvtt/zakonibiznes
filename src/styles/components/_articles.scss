@@ -1,0 +1,20 @@
+@use "../utils/mixins" as *;
+.articles {
+      &__cards {
+            @include grid(3, 34px);
+      }
+      &__card {
+            .card__bottom {
+                  margin-top: 34px;
+                  &-price {
+                        color: white;
+                  }
+                  &-btn {
+                        max-width: max-content !important;
+                  }
+            }
+      }
+      &__btn {
+            margin-top: 54px;
+      }
+}

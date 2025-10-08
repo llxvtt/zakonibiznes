@@ -1,0 +1,47 @@
+body {
+      font-family: "Montserrat";
+}
+
+h1 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 54px;
+      text-transform: uppercase;
+      span {
+            color: var(--text-red);
+      }
+}
+
+h2 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 44px;
+      span {
+            color: var(--text-red);
+      }
+}
+
+h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+}
+
+h4 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 22px;
+}
+
+h5 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+}
+
+p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1d4279;
+      line-height: 27px;
+}

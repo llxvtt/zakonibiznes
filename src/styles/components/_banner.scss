@@ -1,0 +1,65 @@
+@use "../utils/mixins" as *;
+
+.banner {
+      padding: 44px;
+      padding-bottom: 50px;
+      border-radius: 8px;
+      background: url("/src/assets/images/bannerFirst.jpg") no-repeat;
+      background-size: cover;
+      border-radius: 8px;
+      overflow: hidden;
+
+      position: relative;
+
+      &__wrapper {
+            position: relative;
+            z-index: 2;
+      }
+      //  banner texts
+      &__title {
+            color: white;
+            line-height: 32px;
+      }
+      &__btn {
+            margin-top: 24px;
+      }
+}
+.banner::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, #9b2d30 44%, rgba(155, 45, 48, 0) 100%);
+}
+
+// second banner
+
+.banner-second {
+      padding: 44px;
+      padding-top: 35px;
+      padding-bottom: 44px;
+      border-radius: 8px;
+      background: url("/src/assets/images/bannerSecond.jpg") no-repeat;
+      background-size: cover;
+      border-radius: 8px;
+      overflow: hidden;
+
+      position: relative;
+
+      &__wrapper {
+            position: unset;
+            z-index: unset;
+      }
+      //  banner texts
+      &__title {
+            max-width: 524px;
+            color: white;
+            line-height: 32px;
+      }
+      &__btn {
+            margin-top: 24px;
+      }
+}
