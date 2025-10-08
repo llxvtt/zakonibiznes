@@ -48,7 +48,7 @@ const toggleAccordion = (index) => {
                         <div v-for="(item, index) in faqs" :key="index" class="faq__item" :class="{ active: activeIndex === index }">
                               <button class="faq__question" @click="toggleAccordion(index)">
                                     <h5>{{ item.title }}</h5>
-                                    <img class="faq__icon" src="/src/assets/images/icons/plus.svg" alt="icon" />
+                                    <img class="faq__icon" src="/icons/plus.svg" alt="icon" />
                               </button>
 
                               <p v-if="activeIndex === index" class="faq__answer" v-html="item.content"></p>

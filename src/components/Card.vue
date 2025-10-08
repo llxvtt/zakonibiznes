@@ -17,7 +17,7 @@ const props = defineProps({
       <div class="card">
             <div class="card__info">
                   <!-- card info icon  -->
-                  <img class="card__info-icon" src="../assets/images/icons/checked.svg" alt="icon" v-if="icon" />
+                  <img class="card__info-icon" src="/icons/checked.svg" alt="icon" v-if="icon" />
                   <!-- card info title  -->
                   <h5 class="card__info-title">{{ title }}</h5>
                   <!-- card info description  -->
