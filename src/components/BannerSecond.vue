@@ -9,7 +9,7 @@ import Button from "./Button.vue";
                         <!-- banner info title  -->
                         <h4 class="banner-second__title">Подпишитесь на самые актуальные новости по вопросам миграции в Telegram канал</h4>
                         <!-- banner info buttons  -->
-                        <Button class="banner-second__btn" :secondary="true" size="large" title="Telegram канал" icon="../assets/images/icons/telegram.svg" />
+                        <Button class="banner-second__btn" :secondary="true" size="large" title="Telegram канал" icon="/public/telegram.svg" />
                   </div>
             </div>
       </div>
