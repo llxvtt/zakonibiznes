@@ -2,7 +2,7 @@
 import Card from "@/components/Card.vue";
 import { ref } from "vue";
 
-const services = ref([
+const products = ref([
       {
             title: "Регистрация иностранных граждан",
             description: "Заполнение и подача уведомления по месту прибытия иностранного гражданина (регистрация)",
@@ -43,24 +43,24 @@ const services = ref([
 </script>
 
 <template>
-      <section class="services services-second">
+      <section class="products products-second">
             <div class="container">
-                  <div class="services__top section__top">
-                        <h2 class="services__top-title section__top-title">Миграционные услуги  <span>для иностранных граждан</span></h2>
-                        <p class="services__top-desc section__top-desc">Получите документы, подтверждающие ваш статус на территории РФ без очередей, штрафов, потери времени и лишней бюрократии!</p>
+                  <div class="products__top section__top">
+                        <h2 class="products__top-title section__top-title">Миграционные услуги  <span>для иностранных граждан</span></h2>
+                        <p class="products__top-desc section__top-desc">Получите документы, подтверждающие ваш статус на территории РФ без очередей, штрафов, потери времени и лишней бюрократии!</p>
                   </div>
-                  <div class="services__cards">
-                        <Card class="services__card" v-for="(item, index) in services" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
+                  <div class="products__cards">
+                        <Card class="products__card" v-for="(item, index) in products" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
                   </div>
             </div>
       </section>
 </template>
 
 <style>
-.services__top-title {
+.products__top-title {
       max-width: 584px;
 }
-.services__top-desc {
+.products__top-desc {
       max-width: 884px;
 }
 </style>

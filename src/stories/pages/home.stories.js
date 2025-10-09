@@ -1,9 +1,9 @@
 import Header from "@/components/Header.vue";
 import Hero from "@/components/Hero.vue";
 import Benefits from "@/components/Benefits.vue";
-import Services from "@/components/Services.vue";
-import ServicesSecond from "@/components/ServicesSecond.vue";
-import ServicesThird from "@/components/ServicesThird.vue";
+import Products from "@/components/Products.vue";
+import ProductsSecond from "@/components/ProductsSecond.vue";
+import ProductsThird from "@/components/ProductsThird.vue";
 import Banner from "@/components/Banner.vue";
 import Articles from "@/components/Articles.vue";
 import Faq from "@/components/Faq.vue";
@@ -17,15 +17,15 @@ export default {
 };
 
 export const Default = () => ({
-      components: { Header, Hero, Benefits, Services, ServicesSecond, ServicesThird, Banner, Articles, Faq, BannerSecond, Reviews, Location, Footer },
+      components: { Header, Hero, Benefits, Products, ProductsSecond, ProductsThird, Banner, Articles, Faq, BannerSecond, Reviews, Location, Footer },
       template: `
       <div>
             <Header />
             <Hero />
             <Benefits />
-            <Services />
-            <ServicesSecond />
-            <ServicesThird />
+            <Products />
+            <ProductsSecond />
+            <ProductsThird />
             <section>
                   <Banner />
             </section>

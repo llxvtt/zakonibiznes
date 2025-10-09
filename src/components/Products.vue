@@ -2,7 +2,7 @@
 import Card from "@/components/Card.vue";
 import { ref } from "vue";
 
-const services = ref([
+const products = ref([
       {
             title: "Получение квоты",
             description: "Помощь в получении квоты на разрешение временного пребывания на территории РФ",
@@ -64,24 +64,24 @@ const services = ref([
 </script>
 
 <template>
-      <section class="services">
+      <section class="products">
             <div class="container">
-                  <div class="services__top section__top">
-                        <h2 class="services__top-title section__top-title">Миграционные услуги  <span>для иностранных граждан</span></h2>
-                        <p class="services__top-desc section__top-desc">Принимаете на работу иностранных граждан? Экономьте деньги, время и нервы, воспользовавшись нашими услугами. Мы выполняем подготовку и подачу всех необходимых документов! Вам не нужно разбираться в постоянно меняющемся законодательстве и требованиях, ждать очередей и опасаться штрафов</p>
+                  <div class="products__top section__top">
+                        <h2 class="products__top-title section__top-title">Миграционные услуги  <span>для иностранных граждан</span></h2>
+                        <p class="products__top-desc section__top-desc">Принимаете на работу иностранных граждан? Экономьте деньги, время и нервы, воспользовавшись нашими услугами. Мы выполняем подготовку и подачу всех необходимых документов! Вам не нужно разбираться в постоянно меняющемся законодательстве и требованиях, ждать очередей и опасаться штрафов</p>
                   </div>
-                  <div class="services__cards">
-                        <Card class="services__card" v-for="(item, index) in services" :bigCard="true" :key="index" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
+                  <div class="products__cards">
+                        <Card class="products__card" v-for="(item, index) in products" :bigCard="true" :key="index" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
                   </div>
             </div>
       </section>
 </template>
 
 <style>
-.services__top-title {
+.products__top-title {
       max-width: 584px;
 }
-.services__top-desc {
+.products__top-desc {
       max-width: 884px;
 }
 </style>

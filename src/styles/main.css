@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /* Reset and base styles  */
 * {
@@ -356,34 +357,34 @@ section {
   gap: 34px;
 }
 
-.services__cards {
+.products__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 34px;
 }
-.services__card:first-child {
+.products__card:first-child {
   position: relative;
   grid-column: span 2;
   background-color: var(--background-darkblue);
 }
-.services__card:first-child .card__info-title {
+.products__card:first-child .card__info-title {
   font-weight: 700;
   font-style: Bold;
   font-size: 24px;
   line-height: 24px;
   color: white;
 }
-.services__card:first-child .card__info-desc {
+.products__card:first-child .card__info-desc {
   color: white;
 }
-.services__card:first-child .card__bottom-price {
+.products__card:first-child .card__bottom-price {
   color: white;
 }
-.services__card:first-child .card__bottom-btn {
+.products__card:first-child .card__bottom-btn {
   max-width: -moz-max-content !important;
   max-width: max-content !important;
 }
-.services__card:first-child::after {
+.products__card:first-child::after {
   content: url("/src/assets/images/symbol.svg");
   position: absolute;
   bottom: 0;
@@ -391,10 +392,10 @@ section {
   z-index: 10;
 }
 
-.services-second .services__card:first-child {
+.products-second .products__card:first-child {
   background-color: var(--background-red) !important;
 }
-.services-second .services__card:first-child .card__info-title {
+.products-second .products__card:first-child .card__info-title {
   max-width: 300px;
 }
 
@@ -610,4 +611,80 @@ section {
   line-height: 24px;
   text-decoration: underline;
   color: var(--text-darkblue);
+}
+
+.service {
+  padding-top: 128px;
+}
+.service__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+.service__card:last-child {
+  background-color: var(--background-darkblue);
+}
+.service__card:last-child .card__info-icon {
+  filter: brightness(0) invert(1);
+}
+.service__card:last-child .card__info-desc, .service__card:last-child .card__info-title {
+  color: white;
+}
+.service__footer {
+  margin-top: 44px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  background-color: white;
+  border-radius: 8px;
+}
+.service__footer-title {
+  color: var(--text-darkblue);
+}
+.service__footer-btn {
+  padding: 0 44px !important;
+}
+
+.reasons__highlight {
+  padding: 34px 44px;
+  background-color: var(--background-darkblue);
+  border-radius: 8px;
+}
+.reasons__highlight-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: white;
+}
+.reasons__highlight-list {
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+}
+.reasons__highlight-list li {
+  margin-left: 25px;
+  list-style: disc;
+}
+.reasons__content {
+  margin-top: 64px;
+}
+.reasons__content-list--item {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+}
+.reasons__content-list--item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-darkblue);
+}
+.reasons__content-btn {
+  margin-top: 44px;
 }/*# sourceMappingURL=main.css.map */

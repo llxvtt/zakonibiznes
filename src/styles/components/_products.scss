@@ -1,5 +1,5 @@
 @use "../utils/mixins" as *;
-.services {
+.products {
       &__cards {
             @include grid(4, 34px);
       }
@@ -37,8 +37,8 @@
       }
 }
 
-.services-second {
-      .services__card:first-child {
+.products-second {
+      .products__card:first-child {
             background-color: var(--background-red) !important;
             .card__info {
                   &-title {
