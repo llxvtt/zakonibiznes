@@ -29,7 +29,7 @@ const products = ref([
                         <p class="products__top-desc section__top-desc">Знаете ли вы, что заказывая у иностранцев услуги (например, ремонт в квартире), вы попадаете под действие миграционного законодательства? Мы поможем вам избежать штрафов и правильно оформить все документы</p>
                   </div>
                   <div class="products__cards">
-                        <Card class="products__card" v-for="(item, index) in products" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
+                        <Card class="products__card" v-for="(item, index) in products" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="'secondary'" />
                   </div>
             </div>
       </section>

@@ -25,7 +25,7 @@ const benefits = ref([
 <template>
       <section class="benefits">
             <div class="container">
-                  <Card v-for="item of benefits" :key="item" :icon="true" :title="item.title" :description="item.description" />
+                  <Card class="benefits__card" v-for="item of benefits" :key="item" :icon="true" :title="item.title" :description="item.description" />
             </div>
       </section>
 </template>

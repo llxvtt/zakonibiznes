@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from "vue";
 import router from "@/router";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 
 import Button from "./Button.vue";
 import Card from "@/components/Card.vue";
@@ -11,6 +15,7 @@ const props = defineProps({
       btnTitle: String,
       btnSize: String,
       btnColor: String,
+      limit: Number,
 });
 
 const articles = ref([
@@ -45,24 +50,71 @@ const articles = ref([
             title: "Госдума займётся контролем над детьми мигрантов",
             description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
       },
+      {
+            id: 7,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
+      {
+            id: 8,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
+      {
+            id: 9,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
+      {
+            id: 10,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
+      {
+            id: 11,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
+      {
+            id: 12,
+            title: "Госдума займётся контролем над детьми мигрантов",
+            description: "Госдума займётся контролем над детьми мигрантов Парламентарии Государственной Думы намерены рассмотреть инициативу, согласно которой региональные власти обязаны направлять в Министерство внутренних дел информацию о детях",
+      },
 ]);
 
 const articleDetail = (cardIndexEmit) => {
       router.push(`/article/${cardIndexEmit}`);
 };
+
+const emit = defineEmits(["showMoreBtn"]);
+
+const sendData = () => {
+      emit("showMoreBtn", "clicked");
+};
+
+const displayedArticles = computed(() => {
+      if (route.path === "/") {
+            return articles.value.slice(0, 6);
+      }
+      return props.limit ? articles.value.slice(0, props.limit) : articles.value;
+});
 </script>
 
 <template>
       <section class="articles">
             <div class="container">
                   <div class="articles__top section__top">
-                        <BreadCrumb current_page="Полезные статьи" v-if="showBreadCrumb" />
+                        <BreadCrumb v-if="showBreadCrumb" current_page="Полезные статьи" />
                         <h2 class="articles__top-title section__top-title">Полезные статьи <span>по миграционному законодательству</span></h2>
                   </div>
+
                   <div class="articles__cards">
-                        <Card class="articles__card" @cardIndexEmit="articleDetail" v-for="(item, index) in articles" :key="index" :cardIndexProps="index" :bigCard="true" :title="item.title" :id="item.id" :description="item.description" :price="item.price" btnMode="tertiary" />
+                        <Card v-for="(item, index) in displayedArticles" :key="index" class="articles__card" :cardIndexProps="index" :title="item.title" :id="item.id" :description="item.description" :bigCard="true" btnMode="tertiary" @cardIndexEmit="articleDetail" />
                   </div>
-                  <Button class="articles__btn" :title="btnTitle" :primary="btnColor === 'primary'" :gray="btnColor === 'gray'" :size="btnSize" />
+
+                  <Button v-if="route.path === '/blog' && props.limit && displayedArticles.length < articles.length" class="articles__btn" @click="sendData" :title="btnTitle" :primary="btnColor === 'primary'" :gray="btnColor === 'gray'" :size="btnSize" />
+
+                  <Button v-if="route.path === '/'" class="articles__btn" title="Больше полезных статей" :primary="true" size="large" @click="router.push('/blog')" />
             </div>
       </section>
 </template>

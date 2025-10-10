@@ -6,22 +6,22 @@
       &__card:first-child {
             position: relative;
             grid-column: span 2;
-            background-color: var(--background-darkblue);
+            background-color: white;
             .card__info {
                   &-title {
                         font-weight: 700;
                         font-style: Bold;
                         font-size: 24px;
                         line-height: 24px;
-                        color: white;
+                        color: #1d4279;
                   }
                   &-desc {
-                        color: white;
+                        color: #1d4279;
                   }
             }
             .card__bottom {
                   &-price {
-                        color: white;
+                        color: #1d4279;
                   }
                   &-btn {
                         max-width: max-content !important;
@@ -29,7 +29,7 @@
             }
       }
       &__card:first-child::after {
-            content: url("/src/assets/images/symbol.svg");
+            content: url("/src/assets/images/symbol2.svg");
             position: absolute;
             bottom: 0;
             right: 0;
@@ -38,12 +38,50 @@
 }
 
 .products-second {
-      .products__card:first-child {
+      .products__card {
+            background-color: var(--background-darkblue) !important;
+            .card__info {
+                  &-title {
+                        max-width: 300px;
+                        color: white;
+                  }
+                  &-desc {
+                        color: #ffffff80;
+                  }
+            }
+      }
+      .products__card:first-child::after {
+            content: url("/src/assets/images/symbol.svg");
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+      }
+}
+
+.products-third {
+      .products__card {
             background-color: var(--background-red) !important;
             .card__info {
                   &-title {
                         max-width: 300px;
+                        color: white;
+                  }
+                  &-desc {
+                        color: #ffffff80;
                   }
             }
+            .card__bottom {
+                  &-price {
+                        color: white;
+                  }
+            }
+      }
+      .products__card:first-child::after {
+            content: url("/src/assets/images/symbol.svg");
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
       }
 }

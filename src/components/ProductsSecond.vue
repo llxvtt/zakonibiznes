@@ -50,7 +50,7 @@ const products = ref([
                         <p class="products__top-desc section__top-desc">Получите документы, подтверждающие ваш статус на территории РФ без очередей, штрафов, потери времени и лишней бюрократии!</p>
                   </div>
                   <div class="products__cards">
-                        <Card class="products__card" v-for="(item, index) in products" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
+                        <Card class="products__card" v-for="(item, index) in products" :key="index" :bigCard="true" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="'secondary'" />
                   </div>
             </div>
       </section>

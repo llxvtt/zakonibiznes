@@ -71,7 +71,7 @@ const products = ref([
                         <p class="products__top-desc section__top-desc">Принимаете на работу иностранных граждан? Экономьте деньги, время и нервы, воспользовавшись нашими услугами. Мы выполняем подготовку и подачу всех необходимых документов! Вам не нужно разбираться в постоянно меняющемся законодательстве и требованиях, ждать очередей и опасаться штрафов</p>
                   </div>
                   <div class="products__cards">
-                        <Card class="products__card" v-for="(item, index) in products" :bigCard="true" :key="index" :icon="false" :title="item.title" :description="item.description" :price="item.price" :btnMode="index === 0 ? 'secondary' : 'tertiary'" />
+                        <Card class="products__card" v-for="(item, index) in products" :bigCard="true" :key="index" :icon="false" :title="item.title" :description="item.description" :price="item.price" btnMode="tertiary" />
                   </div>
             </div>
       </section>

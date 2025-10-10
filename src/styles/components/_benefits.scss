@@ -4,4 +4,19 @@
       .container {
             @include grid(4, 34px);
       }
+
+      &__card {
+            background-color: var(--background-darkblue);
+            .card__info {
+                  &-icon {
+                        filter: brightness(0) invert(1);
+                  }
+                  &-title {
+                        color: white;
+                  }
+                  &-desc {
+                        color: #ffffff99;
+                  }
+            }
+      }
 }
