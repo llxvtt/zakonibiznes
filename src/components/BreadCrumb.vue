@@ -10,6 +10,9 @@ const props = defineProps({
 </template>
 
 <style scoped>
+.breadcrumb {
+      margin-bottom: 24px;
+}
 .breadcrumb li {
       font-family: "Montserrat";
       font-weight: 600;

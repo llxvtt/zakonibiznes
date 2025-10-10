@@ -18,3 +18,15 @@
             margin-top: 54px;
       }
 }
+
+.article {
+      &__content {
+            display: grid;
+            grid-template-columns: auto 304px;
+            gap: 84px;
+            &-left {
+                  display: grid;
+                  gap: 24px;
+            }
+      }
+}

@@ -49,6 +49,5 @@ const service = ref([
 <style>
 .service__top-title {
       max-width: 650px;
-      margin-top: 24px;
 }
 </style>

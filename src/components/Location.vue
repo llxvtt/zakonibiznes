@@ -1,11 +1,17 @@
 <script setup>
 import Button from "./Button.vue";
+import BreadCrumb from "./BreadCrumb.vue";
+
+const props = defineProps({
+      showBreadCrumb: Boolean,
+});
 </script>
 
 <template>
       <section class="location">
             <div class="container">
                   <div class="location__top section__top">
+                        <BreadCrumb current_page="Контакты" v-if="showBreadCrumb" />
                         <h2 class="location__top-title section__top-title"><span>Как добраться</span> до нашего офиса</h2>
                   </div>
                   <div class="location__map">

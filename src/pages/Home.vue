@@ -22,7 +22,7 @@ import Location from "@/components/Location.vue";
             <section>
                   <Banner />
             </section>
-            <Articles />
+            <Articles :showBreadCrumb="false" btnTitle="Больше полезных статей" btnSize="large" btnColor="primary" />
             <Faq :title="{ blue: 'Какая ответственность наступает', red: 'при нарушении миграционного законодательства?' }" />
             <section>
                   <BannerSecond />

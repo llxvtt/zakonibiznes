@@ -1,16 +1,22 @@
 <script setup>
 import Button from "./Button.vue";
 
-import { onMounted } from "vue";
-
 const props = defineProps({
+      id: Number,
       icon: Boolean,
+      id: Number,
       title: String,
       description: String,
       price: String,
       btnMode: String,
       bigCard: Boolean,
 });
+
+const emit = defineEmits(["cardIndexEmit"]);
+
+function sendData(cardIndex) {
+      emit("cardIndexEmit", cardIndex);
+}
 </script>
 
 <template>
@@ -26,7 +32,7 @@ const props = defineProps({
             </div>
             <div class="card__bottom" v-if="bigCard">
                   <h5 class="card__bottom-price" v-if="price">{{ price }}</h5>
-                  <Button class="card__bottom-btn" :primary="btnMode === 'primary'" :secondary="btnMode === 'secondary'" :tertiary="btnMode === 'tertiary'" title="Подробнее" />
+                  <Button class="card__bottom-btn" @click="sendData(id)" :primary="btnMode === 'primary'" :secondary="btnMode === 'secondary'" :tertiary="btnMode === 'tertiary'" title="Подробнее" />
             </div>
       </div>
 </template>

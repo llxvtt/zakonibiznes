@@ -475,6 +475,16 @@ section {
   margin-top: 54px;
 }
 
+.article__content {
+  display: grid;
+  grid-template-columns: auto 304px;
+  gap: 84px;
+}
+.article__content-left {
+  display: grid;
+  gap: 24px;
+}
+
 .faq__title {
   margin-bottom: 40px;
 }
@@ -613,9 +623,6 @@ section {
   color: var(--text-darkblue);
 }
 
-.service {
-  padding-top: 128px;
-}
 .service__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -686,5 +693,26 @@ section {
   color: var(--text-darkblue);
 }
 .reasons__content-btn {
+  margin-top: 44px;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 578px auto;
+  gap: 34px;
+}
+.about__content-img {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.about__content-info {
+  display: grid;
+  gap: 24px;
+}
+.about__content-info p {
+  line-height: 25px;
+}
+.about__content-btn {
   margin-top: 44px;
 }/*# sourceMappingURL=main.css.map */

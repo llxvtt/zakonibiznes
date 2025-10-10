@@ -1,6 +1,5 @@
 @use "../utils/mixins" as *;
 .service {
-      padding-top: 128px;
       &__cards {
             @include grid(3, 34px);
       }

@@ -1,0 +1,27 @@
+@use "../utils/mixins" as *;
+.about {
+      &__content {
+            display: grid;
+            grid-template-columns: 578px auto;
+            gap: 34px;
+
+            // content left
+            &-img {
+                  width: 100%;
+                  border-radius: 8px;
+                  overflow: hidden;
+            }
+            // content right
+            &-info {
+                  display: grid;
+                  gap: 24px;
+
+                  p {
+                        line-height: 25px;
+                  }
+            }
+            &-btn {
+                  margin-top: 44px;
+            }
+      }
+}

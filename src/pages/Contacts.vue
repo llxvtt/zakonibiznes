@@ -1,23 +1,19 @@
 <script setup>
-import About from "@/components/About.vue";
 import BannerSecond from "@/components/BannerSecond.vue";
-import Reviews from "@/components/Reviews.vue";
 import Location from "@/components/Location.vue";
 </script>
 
 <template>
-      <main class="about">
-            <About />
+      <main class="contacts">
+            <Location :showBreadCrumb="true" />
             <section>
                   <BannerSecond />
             </section>
-            <Reviews />
-            <Location />
       </main>
 </template>
 
 <style scoped>
-.about {
+.contacts {
       padding-top: 62px;
 }
 </style>

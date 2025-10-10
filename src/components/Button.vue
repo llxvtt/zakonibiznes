@@ -37,10 +37,14 @@ export default {
                   type: Boolean,
                   default: false,
             },
+            gray: {
+                  type: Boolean,
+                  default: false,
+            },
             size: {
                   type: String,
                   validator: function (value) {
-                        return ["small", "medium", "large"].indexOf(value) !== -1;
+                        return ["small", "medium", "large", "full"].indexOf(value) !== -1;
                   },
             },
             backgroundColor: {
@@ -60,6 +64,7 @@ export default {
                         "btn--tertiary": props.tertiary,
                         "btn--green": props.green,
                         "btn--blue": props.blue,
+                        "btn--gray": props.gray,
                         [`btn--${props.size || "medium"}`]: true,
                   })),
 
@@ -119,11 +124,25 @@ export default {
       color: white;
 }
 
+.btn--gray {
+      color: white;
+      background-color: #1d427980;
+}
+
+.btn--full {
+      padding: 0 20px;
+      width: 100%;
+      max-width: 100%;
+      height: 65px;
+
+      font-size: 16px;
+      font-weight: 500;
+}
 .btn--large {
       padding: 0 44px;
       height: 65px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 500;
 }
 .btn--medium {
       padding: 0 60px;

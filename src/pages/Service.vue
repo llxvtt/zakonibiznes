@@ -9,7 +9,7 @@ import Reasons from "@/components/Reasons.vue";
 </script>
 
 <template>
-      <main>
+      <main class="service">
             <Service />
             <Advantages />
             <Reasons />
@@ -21,3 +21,9 @@ import Reasons from "@/components/Reasons.vue";
             <Location />
       </main>
 </template>
+
+<style scoped>
+.service {
+      padding-top: 62px;
+}
+</style>

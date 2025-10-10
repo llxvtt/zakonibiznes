@@ -30,7 +30,7 @@ import Button from "@/components/Button.vue";
             <nav class="header__nav">
                   <div class="container">
                         <ul class="header__menu">
-                              <li class="header__menu-item"><a href="#" class="header__menu-link">Главная</a></li>
+                              <li class="header__menu-item"><router-link to="/" class="header__menu-link">Главная</router-link></li>
                               <li class="header__menu-item header__menu-item--dropdown">
                                     <a href="#" class="header__menu-link">Для иностранцев <img src="/icons/arrow-down.svg" alt="icon" /></a>
                               </li>
@@ -40,9 +40,9 @@ import Button from "@/components/Button.vue";
                               <li class="header__menu-item header__menu-item--dropdown">
                                     <a href="#" class="header__menu-link">Для физ лиц <img src="/icons/arrow-down.svg" alt="icon" /></a>
                               </li>
-                              <li class="header__menu-item"><a href="#" class="header__menu-link">О компании</a></li>
-                              <li class="header__menu-item"><a href="#" class="header__menu-link">Блог</a></li>
-                              <li class="header__menu-item"><a href="#" class="header__menu-link">Контакты</a></li>
+                              <li class="header__menu-item"><router-link to="/about" class="header__menu-link">О компании</router-link></li>
+                              <li class="header__menu-item"><router-link to="/blog" class="header__menu-link">Блог</router-link></li>
+                              <li class="header__menu-item"><router-link to="/contacts" class="header__menu-link">Контакты</router-link></li>
                         </ul>
                   </div>
             </nav>
