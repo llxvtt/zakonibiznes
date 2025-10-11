@@ -16,7 +16,7 @@
 }
 
 .contact {
-      width: 576px;
+      width: 581px;
       padding: 24px;
       padding-bottom: 28px;
 
@@ -58,5 +58,19 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            &-btn:hover:first-child {
+                  svg {
+                        path {
+                              fill: var(--btn-blue) !important;
+                        }
+                  }
+            }
+            &-btn:hover:last-child {
+                  svg {
+                        path {
+                              fill: var(--btn-green) !important;
+                        }
+                  }
+            }
       }
 }

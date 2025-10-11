@@ -12,6 +12,10 @@
                   &-btn {
                         max-width: max-content !important;
                   }
+                  &-btn:hover {
+                        background-color: var(--background-red);
+                        color: white;
+                  }
             }
       }
       &__btn {

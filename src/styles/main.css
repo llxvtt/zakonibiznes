@@ -256,6 +256,9 @@ section {
   line-height: 100%;
   color: var(--text-darkblue);
 }
+.header__contact-btn:hover svg path {
+  fill: var(--btn-green);
+}
 .header__nav {
   padding: 20px 0;
   background-color: white;
@@ -374,6 +377,10 @@ section {
   grid-template-columns: repeat(4, 1fr);
   gap: 34px;
 }
+.products__card .card__bottom-btn:hover {
+  background-color: var(--background-red);
+  color: white;
+}
 .products__card:first-child {
   position: relative;
   grid-column: span 2;
@@ -414,6 +421,9 @@ section {
 .products-second .products__card .card__info-desc {
   color: rgba(255, 255, 255, 0.5019607843);
 }
+.products-second .products__card .card__bottom-btn:hover {
+  color: var(--text-darkblue);
+}
 .products-second .products__card:first-child::after {
   content: url("/src/assets/images/symbol.svg");
   position: absolute;
@@ -434,6 +444,10 @@ section {
 }
 .products-third .products__card .card__bottom-price {
   color: white;
+}
+.products-third .products__card .card__bottom-btn:hover {
+  color: var(--text-red);
+  border-color: white;
 }
 .products-third .products__card:first-child::after {
   content: url("/src/assets/images/symbol.svg");
@@ -463,6 +477,9 @@ section {
 }
 .banner__btn {
   margin-top: 24px;
+}
+.banner__btn:hover {
+  color: var(--text-darkblue) !important;
 }
 
 .banner::after {
@@ -495,9 +512,17 @@ section {
   max-width: 500px;
   color: white;
   line-height: 32px;
+  font-weight: 700;
 }
 .banner-second__btn {
   margin-top: 24px;
+}
+.banner-second__btn:hover {
+  color: #007fbc !important;
+  font-weight: 700;
+}
+.banner-second__btn:hover svg path {
+  fill: #007fbc;
 }
 
 .banner-second::after {
@@ -525,6 +550,10 @@ section {
 .articles__card .card__bottom-btn {
   max-width: -moz-max-content !important;
   max-width: max-content !important;
+}
+.articles__card .card__bottom-btn:hover {
+  background-color: var(--background-red);
+  color: white;
 }
 .articles__btn {
   margin-top: 54px;
@@ -614,7 +643,7 @@ section {
 }
 
 .contact {
-  width: 576px;
+  width: 581px;
   padding: 24px;
   padding-bottom: 28px;
   background: white;
@@ -651,6 +680,12 @@ section {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+.contact__btns-btn:hover:first-child svg path {
+  fill: var(--btn-blue) !important;
+}
+.contact__btns-btn:hover:last-child svg path {
+  fill: var(--btn-green) !important;
 }
 
 .footer {

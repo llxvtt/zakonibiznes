@@ -54,6 +54,13 @@
                         color: var(--text-darkblue);
                   }
             }
+            &-btn:hover {
+                  svg {
+                        path {
+                              fill: var(--btn-green);
+                        }
+                  }
+            }
       }
 
       //   header nav

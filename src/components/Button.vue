@@ -1,5 +1,5 @@
 <template>
-      <button type="button" :class="classes" @click="$emit('click')" :style="style"><img v-if="icon" :src="icon" alt="icon" />{{ title }}</button>
+      <button type="button" :class="classes" @click="$emit('click')" :style="style"><slot name="icon"></slot>{{ title }}</button>
 </template>
 
 <script>
@@ -76,7 +76,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .btn {
       display: flex;
       align-items: center;
@@ -89,10 +89,19 @@ export default {
       font-weight: 700;
       line-height: 1;
       font-family: "Montserrat";
+      transition: all 0.2s ease;
+
+      border: 2px solid transparent;
 }
 .btn--primary {
       background-color: var(--btn-red);
       color: white;
+}
+
+.btn--primary:hover {
+      color: var(--btn-red);
+      background: transparent;
+      border-color: var(--btn-red);
 }
 
 .btn--secondary {
@@ -104,6 +113,10 @@ export default {
       display: flex;
       align-items: center;
       gap: 16px;
+}
+
+.btn--secondary:hover {
+      background-color: white;
 }
 
 .btn--tertiary {
@@ -119,9 +132,21 @@ export default {
       color: white;
 }
 
+.btn--green:hover {
+      color: var(--btn-green) !important;
+      background-color: transparent;
+      border: 2px solid var(--btn-green);
+}
+
 .btn--blue {
       background-color: var(--btn-blue);
       color: white;
+}
+
+.btn--blue:hover {
+      color: var(--btn-blue) !important;
+      background-color: transparent;
+      border: 2px solid var(--btn-blue);
 }
 
 .btn--gray {

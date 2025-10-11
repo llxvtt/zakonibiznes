@@ -3,6 +3,14 @@
       &__cards {
             @include grid(4, 34px);
       }
+      &__card {
+            .card__bottom {
+                  &-btn:hover {
+                        background-color: var(--background-red);
+                        color: white;
+                  }
+            }
+      }
       &__card:first-child {
             position: relative;
             grid-column: span 2;
@@ -49,6 +57,11 @@
                         color: #ffffff80;
                   }
             }
+            .card__bottom {
+                  &-btn:hover {
+                        color: var(--text-darkblue);
+                  }
+            }
       }
       .products__card:first-child::after {
             content: url("/src/assets/images/symbol.svg");
@@ -74,6 +87,10 @@
             .card__bottom {
                   &-price {
                         color: white;
+                  }
+                  &-btn:hover {
+                        color: var(--text-red);
+                        border-color: white;
                   }
             }
       }

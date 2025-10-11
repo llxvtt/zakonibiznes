@@ -23,6 +23,9 @@
       &__btn {
             margin-top: 24px;
       }
+      &__btn:hover {
+            color: var(--text-darkblue) !important;
+      }
 }
 .banner::after {
       content: "";
@@ -58,9 +61,19 @@
             max-width: 500px;
             color: white;
             line-height: 32px;
+            font-weight: 700;
       }
       &__btn {
             margin-top: 24px;
+      }
+      &__btn:hover {
+            color: #007fbc !important;
+            font-weight: 700;
+            svg {
+                  path {
+                        fill: #007fbc;
+                  }
+            }
       }
 }
 
