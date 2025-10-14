@@ -2,15 +2,34 @@
 .articles {
       &__cards {
             @include grid(3, 34px);
+
+            @include media(xl) {
+                  @include grid(2, 34px);
+            }
+            @include media(md) {
+                  @include grid(1, 24px);
+            }
       }
       &__card {
+            .card__info {
+                  @include media(md) {
+                        max-width: 100%;
+                  }
+            }
             .card__bottom {
                   margin-top: 34px;
+                  @include media(md) {
+                        margin-top: 24px;
+                  }
                   &-price {
                         color: white;
                   }
                   &-btn {
                         max-width: max-content !important;
+
+                        @include media(md) {
+                              max-width: 100% !important;
+                        }
                   }
                   &-btn:hover {
                         background-color: var(--background-red);
@@ -20,6 +39,9 @@
       }
       &__btn {
             margin-top: 54px;
+            @include media(md) {
+                  margin-top: 44px;
+            }
       }
 }
 

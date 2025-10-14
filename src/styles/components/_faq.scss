@@ -9,6 +9,10 @@
             display: flex;
             flex-direction: column;
             gap: 34px;
+
+            @include media(md) {
+                  gap: 24px;
+            }
       }
 
       &__item {
@@ -23,11 +27,16 @@
             &.active {
                   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             }
+
+            @include media(sm) {
+                  padding-right: 25px;
+            }
       }
 
       &__question {
             width: 100%;
             @include flex-between;
+            gap: 15px;
             padding: 20px 0;
             background: white;
             color: #1d4279;
@@ -35,21 +44,38 @@
             font-size: 18px;
             text-align: left;
             cursor: pointer;
+
+            @include media(sm) {
+                  padding: 14px 0;
+                  align-items: flex-start;
+            }
       }
 
       .faq__icon {
             transition: transform 0.3s ease;
             transform: rotate(0deg);
+
+            @include media(sm) {
+                  width: 34px;
+                  transform: translateY(-3px);
+            }
       }
 
       .faq__item.active .faq__icon {
             transform: rotate(45deg);
             opacity: 0.5;
+            @include media(sm) {
+                  transform: rotate(45deg) translateY(-3px);
+            }
       }
 
       &__answer {
             padding: 24px 0;
             background: #ffffff;
             border-top: 1px solid #1d427933;
+
+            @include media(sm) {
+                  padding: 14px 0;
+            }
       }
 }

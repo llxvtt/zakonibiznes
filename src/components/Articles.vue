@@ -113,8 +113,7 @@ const displayedArticles = computed(() => {
                   </div>
 
                   <Button v-if="route.path === '/blog' && props.limit && displayedArticles.length < articles.length" class="articles__btn" @click="sendData" :title="btnTitle" :primary="btnColor === 'primary'" :gray="btnColor === 'gray'" :size="btnSize" />
-
-                  <Button v-if="route.path === '/'" class="articles__btn" title="Больше полезных статей" :primary="true" size="large" @click="router.push('/blog')" />
+                  <Button v-if="route.path === '/'" class="articles__btn" :title="btnTitle" :primary="true" size="large" @click="router.push('/blog')" />
             </div>
       </section>
 </template>

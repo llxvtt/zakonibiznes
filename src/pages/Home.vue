@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
 import Hero from "@/components/Hero.vue";
 import Benefits from "@/components/Benefits.vue";
 import Products from "@/components/Products.vue";
@@ -10,6 +12,26 @@ import Faq from "@/components/Faq.vue";
 import BannerSecond from "@/components/BannerSecond.vue";
 import Reviews from "@/components/Reviews.vue";
 import Location from "@/components/Location.vue";
+
+// btn title
+const buttonTitle = ref("Больше полезных статей");
+
+const updateButtonTitle = () => {
+      if (window.innerWidth <= 576) {
+            buttonTitle.value = "Больше статей";
+      } else {
+            buttonTitle.value = "Больше полезных статей";
+      }
+};
+
+onMounted(() => {
+      updateButtonTitle();
+      window.addEventListener("resize", updateButtonTitle);
+});
+
+onBeforeUnmount(() => {
+      window.removeEventListener("resize", updateButtonTitle);
+});
 </script>
 
 <template>
@@ -22,7 +44,7 @@ import Location from "@/components/Location.vue";
             <section>
                   <Banner />
             </section>
-            <Articles :showBreadCrumb="false" btnTitle="Больше полезных статей" btnSize="large" btnColor="primary" />
+            <Articles :showBreadCrumb="false" :btnTitle="buttonTitle" btnSize="large" btnColor="primary" />
             <Faq :title="{ blue: 'Какая ответственность наступает', red: 'при нарушении миграционного законодательства?' }" />
             <section>
                   <BannerSecond />

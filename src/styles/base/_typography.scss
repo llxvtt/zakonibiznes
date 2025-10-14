@@ -1,3 +1,5 @@
+@use "../utils/mixins" as *;
+
 body {
       font-family: "Montserrat";
 }
@@ -10,6 +12,12 @@ h1 {
       span {
             color: var(--text-red);
       }
+
+      @include media(sm) {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 38px;
+      }
 }
 
 h2 {
@@ -18,6 +26,12 @@ h2 {
       line-height: 44px;
       span {
             color: var(--text-red);
+      }
+
+      @include media(sm) {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 32px;
       }
 }
 
@@ -31,12 +45,22 @@ h4 {
       font-size: 22px;
       font-weight: 700;
       line-height: 22px;
+
+      @include media(sm) {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 26px;
+      }
 }
 
 h5 {
       font-size: 18px;
       font-weight: 700;
       line-height: 24px;
+
+      @include media(sm) {
+            font-size: 16px;
+      }
 }
 
 p {
@@ -44,4 +68,9 @@ p {
       font-weight: 600;
       color: #1d4279;
       line-height: 27px;
+
+      @include media(sm) {
+            font-size: 14px;
+            line-height: 25px;
+      }
 }

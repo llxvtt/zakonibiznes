@@ -3,10 +3,24 @@
       &__videos {
             @include grid(3, 34px);
 
+            @include media(lg) {
+                  @include grid(2, 34px);
+            }
+            @include media(md) {
+                  @include grid(2, 24px);
+            }
+            @include media(sm) {
+                  @include grid(1, 24px);
+            }
+
             &-item {
                   height: 254px;
                   border-radius: 8px;
                   overflow: hidden;
+                  background: black;
+                  @include media(md) {
+                        height: 184px;
+                  }
 
                   iframe {
                         width: 100%;

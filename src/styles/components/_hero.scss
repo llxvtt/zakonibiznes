@@ -3,23 +3,58 @@
       .container {
             @include grid(2, 42px);
             align-items: center;
+
+            @include media(lg) {
+                  grid-template-columns: unset;
+                  gap: unset;
+            }
       }
 
       //  hero info
       &__info {
             &-title {
                   color: #1d4279;
-                  margin-bottom: 24px;
+                  margin-bottom: 34px;
+                  @include media(lg) {
+                        max-width: 80%;
+                  }
+                  @include media(md) {
+                        max-width: 100%;
+                        margin-bottom: 24px;
+                  }
             }
             &-list {
-                  margin-left: 24px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 14px;
+                  max-width: 600px;
+                  @include media(xl) {
+                        gap: 10px;
+                  }
                   &--item {
-                        list-style: disc;
+                        max-width: max-content;
+                        padding: 12px 34px;
+
                         font-family: "Montserrat";
                         font-weight: 600;
-                        font-size: 17px;
+                        font-size: 16px;
                         line-height: 27px;
                         color: var(--text-darkblue);
+
+                        border: 2px solid #1d427933;
+                        border-radius: 999px;
+
+                        @include media(xl) {
+                              font-size: 15px;
+                              padding: 10px 30px;
+                        }
+                        @include media(md) {
+                              font-size: 14px;
+                              font-weight: 600;
+                              line-height: 23px;
+
+                              padding: 9px 32px;
+                        }
                   }
             }
             &-btn {
@@ -30,5 +65,8 @@
 
       &__image {
             width: 100%;
+            @include media(lg) {
+                  display: none;
+            }
       }
 }

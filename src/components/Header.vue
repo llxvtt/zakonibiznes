@@ -1,13 +1,30 @@
 <script setup>
+import { ref } from "vue";
 import Button from "@/components/Button.vue";
+import HeaderBurgerMenu from "@/components/HeaderBurgerMenu.vue";
+
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
 
 <template>
       <header class="header">
             <div class="header__top">
                   <div class="container">
-                        <!-- header logo  -->
-                        <a href="#!" class="header__logo"><img src="../assets/images/logo.svg" alt="logo" /></a>
+                        <div class="header__top-wrapper">
+                              <!-- header logo  -->
+                              <a href="#!" class="header__logo">
+                                    <!-- logo  -->
+                                    <img src="../assets/images/logo.svg" alt="logo" />
+                              </a>
+                              <!-- burger button  -->
+                              <button class="header__top-burger" @click="isMenuOpen = true">
+                                    <img src="/icons/burger.svg" alt="icon" />
+                              </button>
+                        </div>
                         <!-- header search  -->
                         <div class="header__search">
                               <input type="text" class="header__search-input" placeholder="Поиск по сайту" />
@@ -30,27 +47,98 @@ import Button from "@/components/Button.vue";
                                           </svg>
                                     </template>
                               </Button>
+
+                              <button class="header__burger" @click="isMenuOpen = true">
+                                    <img src="/icons/burger.svg" alt="icon" />
+                              </button>
                         </div>
                   </div>
             </div>
             <nav class="header__nav">
                   <div class="container">
                         <ul class="header__menu">
-                              <li class="header__menu-item"><router-link to="/" class="header__menu-link">Главная</router-link></li>
-                              <li class="header__menu-item header__menu-item--dropdown">
-                                    <a href="#" class="header__menu-link">Для иностранцев <img src="/icons/arrow-down.svg" alt="icon" /></a>
+                              <li class="header__menu-item"><a href="/" class="header__menu-link">Главная</a></li>
+                              <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link"
+                                          >Для иностранцев
+                                          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99986 6.36725L13.7749 0.592247L15.4245 2.24191L7.99986 9.66658L0.575195 2.24191L2.22486 0.592247L7.99986 6.36725Z" fill="#9B2D30" fill-opacity="0.5" />
+                                          </svg>
+                                    </a>
+
+                                    <div class="header__menu-dropdown">
+                                          <ul class="header__menu-dropdown-links">
+                                                <li><a href="#!">Получение квоты</a></li>
+                                                <li><a href="#!">получение рвп рф</a></li>
+                                                <li><a href="#!">получение рвпо</a></li>
+                                                <li><a href="#!">получение внж</a></li>
+                                                <li><a href="#!">пОЛУЧЕНИЕ ГРАЖДАНСТВА РФ</a></li>
+                                                <li><a href="#!">пОЛУЧЕНИЕ СТАТУСА НРЯ</a></li>
+                                                <li><a href="#!">СУДЕБНАЯ ЗАЩИТА</a></li>
+                                                <li><a href="#!">ПОЛУЧЕНИЕ ИНН</a></li>
+                                                <li><a href="#!">ПОЛУЧЕНИЕ СНИЛС</a></li>
+                                                <li><a href="#!">ВОССТАНОВЛЕНИЕ ДОКУМЕНТОВ</a></li>
+                                                <li><a href="#!">ПОДАЧА ЗАПРОСОВ</a></li>
+                                          </ul>
+                                    </div>
                               </li>
-                              <li class="header__menu-item header__menu-item--dropdown">
-                                    <a href="#" class="header__menu-link">Для юр лиц <img src="/icons/arrow-down.svg" alt="icon" /></a>
+                              <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link"
+                                          >Для юр лиц
+                                          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99986 6.36725L13.7749 0.592247L15.4245 2.24191L7.99986 9.66658L0.575195 2.24191L2.22486 0.592247L7.99986 6.36725Z" fill="#9B2D30" fill-opacity="0.5" />
+                                          </svg>
+                                    </a>
+                                    <div class="header__menu-dropdown">
+                                          <ul class="header__menu-dropdown-links">
+                                                <li><a href="#!">Подготовка трудового договора</a></li>
+                                                <li><a href="#!">уведомление о приеме на работу иностранца</a></li>
+                                                <li><a href="#!">регистрация иностранцев</a></li>
+                                                <li><a href="#!">судебная защита работодателей</a></li>
+                                                <li><a href="#!">миграционный аудит</a></li>
+                                                <li><a href="#!">оформление инн для иностранца</a></li>
+                                                <li><a href="#!">оформление снилс для иностранца</a></li>
+                                                <li><a href="#!">как принять на работу мигранта</a></li>
+                                          </ul>
+                                    </div>
                               </li>
-                              <li class="header__menu-item header__menu-item--dropdown">
-                                    <a href="#" class="header__menu-link">Для физ лиц <img src="/icons/arrow-down.svg" alt="icon" /></a>
+                              <li class="header__menu-item">
+                                    <a href="#" class="header__menu-link"
+                                          >Для физ лиц
+                                          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99986 6.36725L13.7749 0.592247L15.4245 2.24191L7.99986 9.66658L0.575195 2.24191L2.22486 0.592247L7.99986 6.36725Z" fill="#9B2D30" fill-opacity="0.5" />
+                                          </svg>
+                                    </a>
+
+                                    <div class="header__menu-dropdown">
+                                          <ul class="header__menu-dropdown-links">
+                                                <li><a href="#!">ПОДГОТОВКА ТРУДОВОГО ДОГОВОРА</a></li>
+                                                <li><a href="#!">РЕГИСТРАЦИЯ ИНОСТРАНЦЕВ</a></li>
+                                                <li><a href="#!">УВЕДОМЛЕНИЕ О ПРИЕМЕ НА РАБОТУ</a></li>
+                                          </ul>
+                                    </div>
                               </li>
-                              <li class="header__menu-item"><router-link to="/about" class="header__menu-link">О компании</router-link></li>
-                              <li class="header__menu-item"><router-link to="/blog" class="header__menu-link">Блог</router-link></li>
-                              <li class="header__menu-item"><router-link to="/contacts" class="header__menu-link">Контакты</router-link></li>
+                              <li class="header__menu-item"><a to="/about" class="header__menu-link">О компании</a></li>
+                              <li class="header__menu-item"><a to="/blog" class="header__menu-link">Блог</a></li>
+                              <li class="header__menu-item"><a to="/contacts" class="header__menu-link">Контакты</a></li>
                         </ul>
                   </div>
             </nav>
+            <!-- header burger menu  -->
+            <transition name="slide">
+                  <HeaderBurgerMenu v-if="isMenuOpen" @close="toggleMenu" />
+            </transition>
       </header>
 </template>
+
+<style scoped>
+.slide-enter-active,
+.slide-leave-active {
+      transition: all 0.4s ease;
+}
+.slide-enter-from,
+.slide-leave-to {
+      opacity: 0;
+      transform: translateX(-100%);
+}
+</style>

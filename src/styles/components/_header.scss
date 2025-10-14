@@ -3,14 +3,51 @@
 .header {
       &__top {
             padding: 24px 0;
+            @include media(lg) {
+                  padding-bottom: 0;
+            }
             .container {
                   @include flex-between;
+                  @include media(lg) {
+                        display: grid;
+                        grid-template-columns: max-content auto max-content;
+                        justify-content: unset;
+                        gap: 20px;
+                  }
+                  @include media(md) {
+                        grid-template-columns: 100%;
+                  }
+            }
+            &-wrapper {
+                  @include media(md) {
+                        @include flex-between;
+                  }
+            }
+      }
+      &__top-burger {
+            display: none;
+            @include media(md) {
+                  display: block;
+            }
+      }
+      &__logo {
+            img {
+                  @include media(md) {
+                        width: 156px;
+                  }
             }
       }
       &__search {
-            @include flex-center;
+            display: grid;
+            grid-template-columns: auto 50px;
             gap: 14px;
-            transform: translateX(-13px);
+            @include media(xl) {
+                  transform: translateX(-30px);
+            }
+            @include media(lg) {
+                  transform: unset;
+            }
+
             &-input {
                   width: 340px;
                   height: 50px;
@@ -19,9 +56,23 @@
                   border-radius: 8px;
 
                   font-family: "Montserrat";
-                  font-weight: 600;
                   font-size: 15px;
+                  font-weight: 700;
                   line-height: 100%;
+                  color: var(--text-red);
+
+                  @include media(xl) {
+                        width: 280px;
+                  }
+                  @include media(lg) {
+                        width: 100%;
+                  }
+            }
+            &-input:focus {
+                  border-color: var(--text-red);
+            }
+            &-input:focus::placeholder {
+                  color: var(--text-red);
             }
             &-input::placeholder {
                   font-family: "Montserrat";
@@ -37,15 +88,241 @@
                   height: 50px;
                   border-radius: 8px;
                   background-color: var(--btn-red);
+                  img {
+                        @include media(md) {
+                              width: 18px;
+                        }
+                  }
             }
       }
       &__contact {
             display: flex;
             align-items: center;
             gap: 34px;
+
+            @include media(md) {
+                  display: none;
+            }
             &-phone {
                   @include flex-center;
                   gap: 20px;
+
+                  @include media(xl) {
+                        display: none;
+                  }
+
+                  span {
+                        font-weight: 700;
+                        font-style: Bold;
+                        font-size: 16px;
+                        line-height: 100%;
+                        color: var(--text-darkblue);
+                        transition: 0.3s ease;
+
+                        &:hover {
+                              color: var(--text-red);
+                        }
+                  }
+            }
+            &-btn {
+                  @include media(lg) {
+                        display: none !important;
+                  }
+            }
+            &-btn:hover {
+                  svg {
+                        path {
+                              fill: var(--btn-green);
+                        }
+                  }
+            }
+      }
+      //   header nav
+      &__nav {
+            padding: 20px 0;
+            background-color: white;
+            border-top: 1px solid #1d427933;
+            border-bottom: 1px solid #1d427933;
+
+            @include media(lg) {
+                  display: none !important;
+            }
+      }
+      &__menu {
+            @include flex-between;
+            &-item {
+                  position: relative;
+                  &:hover {
+                        .header__menu-dropdown {
+                              opacity: 1;
+                              visibility: visible;
+                        }
+                        .header__menu-link {
+                              color: var(--text-red);
+                        }
+                        svg {
+                              transform: rotate(180deg);
+                              path {
+                                    fill: var(--text-red) !important;
+                                    fill-opacity: 1 !important;
+                              }
+                        }
+                  }
+            }
+            li {
+                  a {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+
+                        font-weight: 700;
+                        font-style: Bold;
+                        font-size: 14px;
+                        line-height: 100%;
+                        text-transform: uppercase;
+                        color: var(--text-darkblue);
+                        transition: 0.3s ease;
+                        cursor: pointer;
+
+                        svg {
+                              transition: transform 0.3s ease;
+                              path {
+                                    transition: fill 0.3s ease, fill-opacity 0.3s ease;
+                              }
+                        }
+                  }
+            }
+
+            &-dropdown {
+                  padding-top: 44px;
+                  position: absolute;
+
+                  opacity: 0;
+                  visibility: hidden;
+                  transition: all 0.3s ease;
+
+                  &-links {
+                        padding: 24px;
+                        padding-right: 44px;
+                        display: grid;
+                        gap: 14px;
+                        background-color: white;
+                        border-radius: 8px;
+                        white-space: nowrap;
+                        li:hover {
+                              a {
+                                    color: var(--text-red);
+                              }
+                        }
+                  }
+            }
+      }
+
+      &__burger {
+            display: none;
+
+            @include media(xl) {
+                  display: block;
+            }
+            @include media(md) {
+                  display: none;
+            }
+      }
+}
+.header-menu {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      background-color: white;
+      .container {
+            height: 100%;
+            display: grid;
+            grid-template-rows: max-content max-content auto;
+      }
+      &__top {
+            padding: 24px 0;
+            display: grid;
+            grid-template-columns: 100%;
+            justify-content: unset;
+            gap: 20px;
+
+            &-wrapper {
+                  @include flex-between;
+            }
+      }
+      &__logo {
+            img {
+                  @include media(md) {
+                        width: 156px;
+                  }
+            }
+      }
+      &__search {
+            display: grid;
+            grid-template-columns: auto 50px;
+            gap: 14px;
+            @include media(xl) {
+                  transform: translateX(-30px);
+            }
+            @include media(lg) {
+                  transform: unset;
+            }
+
+            &-input {
+                  width: 100%;
+                  height: 50px;
+                  padding: 0 24px;
+                  border: 2px solid #1d427933;
+                  border-radius: 8px;
+
+                  font-family: "Montserrat";
+                  font-size: 15px;
+                  font-weight: 700;
+                  line-height: 100%;
+                  color: var(--text-red);
+            }
+            &-input:focus {
+                  border-color: var(--text-red);
+            }
+            &-input:focus::placeholder {
+                  color: var(--text-red);
+            }
+            &-input::placeholder {
+                  font-family: "Montserrat";
+                  font-weight: 600;
+                  font-size: 15px;
+                  line-height: 100%;
+                  color: #1d427980;
+            }
+
+            // header search btn
+            &-btn {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 8px;
+                  background-color: var(--btn-red);
+                  img {
+                        @include media(md) {
+                              width: 18px;
+                        }
+                  }
+            }
+      }
+      &__contacts {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            gap: 25px;
+
+            &-phone {
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+
                   span {
                         font-weight: 700;
                         font-style: Bold;
@@ -62,26 +339,40 @@
                   }
             }
       }
-
-      //   header nav
       &__nav {
-            padding: 20px 0;
-            background-color: white;
-            border-top: 1px solid #1d427933;
-            border-bottom: 1px solid #1d427933;
+            padding: 22px 0;
       }
       &__menu {
-            @include flex-between;
+            display: grid;
+            gap: 30px;
             &-link {
-                  @include flex-center;
+                  display: flex;
+                  align-items: center;
                   gap: 14px;
-
                   font-weight: 700;
                   font-style: Bold;
                   font-size: 14px;
                   line-height: 100%;
                   text-transform: uppercase;
                   color: var(--text-darkblue);
+                  transition: 0.3s ease;
+                  cursor: pointer;
+            }
+            &-link:hover {
+                  color: var(--text-red);
+            }
+      }
+
+      &__burger {
+            display: none;
+
+            @include media(xl) {
+                  display: block;
+            }
+            @include media(md) {
+                  display: none;
             }
       }
 }
+
+// media responsive

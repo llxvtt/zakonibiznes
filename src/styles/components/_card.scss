@@ -6,18 +6,20 @@
       background-color: #ffffffa3;
       display: grid;
       grid-template-rows: auto max-content;
-
+      // card icon
+      &__icon {
+            margin-bottom: 18px;
+            width: 28px;
+            @include media(sm) {
+                  width: 22px;
+            }
+      }
       //  card info
       &__info {
             max-width: 388px;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
 
-            &-icon {
-                  margin-bottom: 18px;
-                  width: 28px;
-            }
             &-title {
                   color: #1d4279;
             }
@@ -33,10 +35,16 @@
 
       &__bottom {
             margin-top: 34px;
+            @include media(sm) {
+                  margin-top: 24px;
+            }
             &-price {
                   width: 100%;
                   color: var(--text-darkblue);
                   margin-bottom: 24px;
+                  @include media(sm) {
+                        margin-bottom: 14px;
+                  }
             }
             &-btn {
                   width: 100%;

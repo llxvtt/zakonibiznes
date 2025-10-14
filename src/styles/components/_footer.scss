@@ -21,5 +21,11 @@
                   text-decoration: underline;
                   color: var(--text-darkblue);
             }
+
+            @include media(lg) {
+                  flex-direction: column;
+                  gap: 14px;
+                  text-align: center;
+            }
       }
 }

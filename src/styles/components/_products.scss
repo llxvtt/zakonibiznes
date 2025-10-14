@@ -2,6 +2,15 @@
 .products {
       &__cards {
             @include grid(4, 34px);
+            @include media(xl) {
+                  @include grid(3, 34px);
+            }
+            @include media(lg) {
+                  @include grid(2, 34px);
+            }
+            @include media(md) {
+                  @include grid(1, 24px);
+            }
       }
       &__card {
             .card__bottom {
@@ -15,6 +24,11 @@
             position: relative;
             grid-column: span 2;
             background-color: white;
+
+            @include media(lg) {
+                  grid-column: unset;
+            }
+
             .card__info {
                   &-title {
                         font-weight: 700;
@@ -22,9 +36,18 @@
                         font-size: 24px;
                         line-height: 24px;
                         color: #1d4279;
+
+                        @include media(lg) {
+                              font-size: 18px;
+                              font-weight: 700;
+                              line-height: 24px;
+                        }
                   }
                   &-desc {
                         color: #1d4279;
+                        @include media(lg) {
+                              color: #1d427999;
+                        }
                   }
             }
             .card__bottom {
@@ -33,6 +56,9 @@
                   }
                   &-btn {
                         max-width: max-content !important;
+                        @include media(lg) {
+                              max-width: 100% !important;
+                        }
                   }
             }
       }
@@ -41,7 +67,10 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            z-index: 10;
+            z-index: 1;
+            @include media(lg) {
+                  content: unset;
+            }
       }
 }
 
@@ -58,6 +87,9 @@
                   }
             }
             .card__bottom {
+                  &-price {
+                        color: white;
+                  }
                   &-btn:hover {
                         color: var(--text-darkblue);
                   }
@@ -69,6 +101,9 @@
             bottom: 0;
             right: 0;
             z-index: 10;
+            @include media(lg) {
+                  content: unset;
+            }
       }
 }
 
@@ -99,6 +134,9 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            z-index: 10;
+            z-index: 1;
+            @include media(lg) {
+                  content: unset;
+            }
       }
 }

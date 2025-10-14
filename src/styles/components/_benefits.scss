@@ -1,18 +1,40 @@
 @use "../utils/mixins" as *;
 .benefits {
       padding-top: 0;
+      @include media(md) {
+            padding-top: 32px;
+      }
       .container {
             @include grid(4, 34px);
+            @include media(xl) {
+                  @include grid(3, 34px);
+            }
+            @include media(lg) {
+                  @include grid(2, 34px);
+            }
+            @include media(md) {
+                  @include grid(1, 24px);
+            }
       }
 
       &__card {
             background-color: var(--background-darkblue);
+            .card__body {
+                  @include media(md) {
+                        display: grid;
+                        grid-template-columns: max-content auto;
+                        gap: 17px;
+                  }
+            }
             .card__info {
                   &-icon {
                         filter: brightness(0) invert(1);
                   }
                   &-title {
                         color: white;
+                        @include media(md) {
+                              transform: translateY(-4px);
+                        }
                   }
                   &-desc {
                         color: #ffffff99;

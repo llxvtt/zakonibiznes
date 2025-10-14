@@ -32,16 +32,24 @@
 // media
 
 @mixin media($breakpoint) {
-      @if $breakpoint == sm {
-            @media (max-width: 576px) {
+      @if $breakpoint == xl {
+            @media (max-width: 1240px) {
+                  @content;
+            }
+      } @else if $breakpoint == lg {
+            @media (max-width: 1024px) {
                   @content;
             }
       } @else if $breakpoint == md {
             @media (max-width: 768px) {
                   @content;
             }
-      } @else if $breakpoint == lg {
-            @media (max-width: 1024px) {
+      } @else if $breakpoint == sm {
+            @media (max-width: 576px) {
+                  @content;
+            }
+      } @else if $breakpoint == xs {
+            @media (max-width: 375px) {
                   @content;
             }
       }

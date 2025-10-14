@@ -77,6 +77,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use "../styles/utils/mixins" as *;
+
 .btn {
       display: flex;
       align-items: center;
@@ -168,11 +170,25 @@ export default {
       height: 65px;
       font-size: 16px;
       font-weight: 500;
+      @include media(md) {
+            height: 55px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 100%;
+      }
 }
+
 .btn--medium {
       padding: 0 60px;
       height: 55px;
       font-size: 16px;
+
+      @include media(md) {
+            height: 50px !important;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 100%;
+      }
 }
 .btn--small {
       padding: 0 24px;
