@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
                         </ul>
                         <Button class="hero__info-btn" :title="buttonTitle" :primary="true" size="large" />
                   </div>
-                  <img class="hero__image" src="/src/assets/images/haro.png" alt="hero-image" />
+                  <img class="hero__image" src="/src/assets/images/haro.webp" alt="hero-image" />
             </div>
       </section>
 </template>

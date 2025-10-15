@@ -63,7 +63,7 @@
             }
       }
       &__card:first-child::after {
-            content: url("/src/assets/images/symbol2.svg");
+            content: url("/src/assets/images/symbol2.webp");
             position: absolute;
             bottom: 0;
             right: 0;
@@ -96,7 +96,7 @@
             }
       }
       .products__card:first-child::after {
-            content: url("/src/assets/images/symbol.svg");
+            content: url("/src/assets/images/symbol.webp");
             position: absolute;
             bottom: 0;
             right: 0;
@@ -130,7 +130,7 @@
             }
       }
       .products__card:first-child::after {
-            content: url("/src/assets/images/symbol.svg");
+            content: url("/src/assets/images/symbol.webp");
             position: absolute;
             bottom: 0;
             right: 0;

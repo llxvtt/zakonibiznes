@@ -914,7 +914,7 @@ section {
   }
 }
 .products__card:first-child::after {
-  content: url("/src/assets/images/symbol2.svg");
+  content: url("/src/assets/images/symbol2.webp");
   position: absolute;
   bottom: 0;
   right: 0;
@@ -943,7 +943,7 @@ section {
   color: var(--text-darkblue);
 }
 .products-second .products__card:first-child::after {
-  content: url("/src/assets/images/symbol.svg");
+  content: url("/src/assets/images/symbol.webp");
   position: absolute;
   bottom: 0;
   right: 0;
@@ -973,7 +973,7 @@ section {
   border-color: white;
 }
 .products-third .products__card:first-child::after {
-  content: url("/src/assets/images/symbol.svg");
+  content: url("/src/assets/images/symbol.webp");
   position: absolute;
   bottom: 0;
   right: 0;
@@ -989,7 +989,7 @@ section {
   padding: 44px;
   padding-bottom: 50px;
   border-radius: 8px;
-  background: url("/src/assets/images/bannerFirst.jpg") no-repeat;
+  background: url("/src/assets/images/bannerFirst.webp") no-repeat;
   background-size: cover;
   border-radius: 8px;
   overflow: hidden;
@@ -999,7 +999,7 @@ section {
   .banner {
     padding: 24px;
     padding-bottom: 28px;
-    background: url("/src/assets/images/bannerFirstMedia.png") no-repeat;
+    background: url("/src/assets/images/bannerFirstMedia.webp") no-repeat;
     background-position-x: right;
   }
 }
@@ -1045,7 +1045,7 @@ section {
   padding-top: 35px;
   padding-bottom: 44px;
   border-radius: 8px;
-  background: url("/src/assets/images/bannerSecond.jpg") no-repeat;
+  background: url("/src/assets/images/bannerSecond.webp") no-repeat;
   background-size: cover;
   background-position-x: right;
   border-radius: 8px;
@@ -1056,7 +1056,7 @@ section {
   .banner-second {
     padding: 24px;
     padding-bottom: 28px;
-    background: url("/src/assets/images/bannerSecondMedia.jpg") no-repeat;
+    background: url("/src/assets/images/bannerSecondMedia.webp") no-repeat;
     background-position-x: right;
   }
 }

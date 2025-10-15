@@ -4,7 +4,7 @@
       padding: 44px;
       padding-bottom: 50px;
       border-radius: 8px;
-      background: url("/src/assets/images/bannerFirst.jpg") no-repeat;
+      background: url("/src/assets/images/bannerFirst.webp") no-repeat;
       background-size: cover;
       border-radius: 8px;
       overflow: hidden;
@@ -13,7 +13,7 @@
       @include media(sm) {
             padding: 24px;
             padding-bottom: 28px;
-            background: url("/src/assets/images/bannerFirstMedia.png") no-repeat;
+            background: url("/src/assets/images/bannerFirstMedia.webp") no-repeat;
             background-position-x: right;
       }
 
@@ -60,7 +60,7 @@
       padding-top: 35px;
       padding-bottom: 44px;
       border-radius: 8px;
-      background: url("/src/assets/images/bannerSecond.jpg") no-repeat;
+      background: url("/src/assets/images/bannerSecond.webp") no-repeat;
       background-size: cover;
       background-position-x: right;
       border-radius: 8px;
@@ -70,7 +70,7 @@
       @include media(sm) {
             padding: 24px;
             padding-bottom: 28px;
-            background: url("/src/assets/images/bannerSecondMedia.jpg") no-repeat;
+            background: url("/src/assets/images/bannerSecondMedia.webp") no-repeat;
             background-position-x: right;
       }
 
