@@ -1,5 +1,25 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./Button.vue";
+
+const buttonTitle = ref("Бесплатная консультация");
+
+const updateButtonTitle = () => {
+      if (window.innerWidth <= 576) {
+            buttonTitle.value = "Консультация";
+      } else {
+            buttonTitle.value = "Бесплатная консультация";
+      }
+};
+
+onMounted(() => {
+      updateButtonTitle();
+      window.addEventListener("resize", updateButtonTitle);
+});
+
+onBeforeUnmount(() => {
+      window.removeEventListener("resize", updateButtonTitle);
+});
 </script>
 
 <template>
@@ -10,11 +30,11 @@ import Button from "./Button.vue";
                   </div>
                   <div class="reasons__highlight">
                         <h4 class="reasons__highlight-title">Самое главное!</h4>
-                        <ul class="reasons__highlight-list">
-                              <li>Мы предлагаем удобный способ оплаты: вы вносите 50% авансом перед началом нашей работы, а остаток оплачиваете, когда весь необходимый пакет документов будет готов. Принимаем все виды оплат: наличный, безналичный, оплата картами.</li>
-                              <li>Мы беремся помогать в получении необходимых документов только при 100% уверенности в положительном исходе</li>
-                              <li>и точно можем оценить, что для этого потребуется благодаря нашему пятнадцатилетнему опыту. Поэтому в случае возникновения каких-либо сложностей (что бывает редко), бесплатно вносим изменения в документы и не изменяем заявленной ранее стоимости.</li>
-                        </ul>
+                        <p class="reasons__highlight-list">
+                              <span class="reasons__content-list--item">Мы предлагаем удобный способ оплаты: вы вносите 50% авансом перед началом нашей работы, а остаток оплачиваете, когда весь необходимый пакет документов будет готов. Принимаем все виды оплат: наличный, безналичный, оплата картами.</span>
+                              <span class="reasons__content-list--item">Мы беремся помогать в получении необходимых документов только при 100% уверенности в положительном исходе</span>
+                              <span class="reasons__content-list--item">и точно можем оценить, что для этого потребуется благодаря нашему пятнадцатилетнему опыту. Поэтому в случае возникновения каких-либо сложностей (что бывает редко), бесплатно вносим изменения в документы и не изменяем заявленной ранее стоимости.</span>
+                        </p>
                   </div>
                   <div class="reasons__content">
                         <p class="reasons__content-list">
@@ -27,7 +47,7 @@ import Button from "./Button.vue";
                               <br />
                               Наши услуги доступны для всех иностранных граждан, которые находятся в Москве или за пределами РФ и имеют проблемы с законом (были подвергнуты депортации или выдворению). Мы гарантируем конфиденциальность и высокое качество нашей работы. Не откладывайте защиту своих прав на потом! Обратитесь к нам уже сегодня и получите квалифицированную юридическую помощь!
                         </p>
-                        <Button class="reasons__content-btn" title="Бесплатная консультация" :primary="true" size="large" />
+                        <Button class="reasons__content-btn" :title="buttonTitle" :primary="true" size="large" />
                   </div>
             </div>
       </section>

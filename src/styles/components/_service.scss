@@ -2,6 +2,27 @@
 .service {
       &__cards {
             @include grid(3, 34px);
+            @include media(lg) {
+                  @include grid(2, 34px);
+            }
+            @include media(sm) {
+                  @include grid(1, 24px);
+            }
+      }
+      &__card {
+            .card__body {
+                  @include media(sm) {
+                        display: grid;
+                        grid-template-columns: max-content auto;
+                        gap: 17px;
+                  }
+            }
+            .card__icon {
+                  @include media(sm) {
+                        margin-bottom: 0;
+                        transform: translateY(7px);
+                  }
+            }
       }
       &__card:last-child {
             background-color: var(--background-darkblue);
@@ -23,11 +44,30 @@
 
             background-color: white;
             border-radius: 8px;
+
+            @include media(md) {
+                  padding: 24px;
+                  flex-direction: column;
+                  gap: 15px;
+            }
+            @include media(sm) {
+                  margin-top: 24px;
+            }
             &-title {
                   color: var(--text-darkblue);
+
+                  @include media(sm) {
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 24px;
+                  }
             }
             &-btn {
                   padding: 0 44px !important;
+
+                  @include media(sm) {
+                        width: 100%;
+                  }
             }
       }
 }

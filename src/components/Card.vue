@@ -30,7 +30,7 @@ function sendData(cardIndex) {
                         <!-- card info title  -->
                         <h5 class="card__info-title">{{ title }}</h5>
                         <!-- card info description  -->
-                        <p class="card__info-desc">{{ description }}</p>
+                        <p class="card__info-desc" v-if="description">{{ description }}</p>
                   </div>
             </div>
             <div class="card__bottom" v-if="bigCard">

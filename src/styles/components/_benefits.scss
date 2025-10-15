@@ -26,15 +26,18 @@
                         gap: 17px;
                   }
             }
+            .card__icon {
+                  @include media(sm) {
+                        transform: translateY(7px);
+                  }
+            }
             .card__info {
                   &-icon {
                         filter: brightness(0) invert(1);
                   }
+
                   &-title {
                         color: white;
-                        @include media(md) {
-                              transform: translateY(-4px);
-                        }
                   }
                   &-desc {
                         color: #ffffff99;

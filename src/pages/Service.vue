@@ -9,8 +9,8 @@ import Reasons from "@/components/Reasons.vue";
 </script>
 
 <template>
-      <main class="service">
-            <Service />
+      <main>
+            <Service class="pt-124" />
             <Advantages />
             <Reasons />
             <Faq :title="{ blue: 'Ответы на частые вопросы' }" />
@@ -22,8 +22,4 @@ import Reasons from "@/components/Reasons.vue";
       </main>
 </template>
 
-<style scoped>
-.service {
-      padding-top: 62px;
-}
-</style>
+<style scoped></style>

@@ -23,4 +23,12 @@ const props = defineProps({
 .breadcrumb li a {
       color: #1d427980;
 }
+
+@media (max-width: 576px) {
+      .breadcrumb li {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 24px;
+      }
+}
 </style>

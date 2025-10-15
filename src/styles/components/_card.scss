@@ -17,8 +17,8 @@
       //  card info
       &__info {
             max-width: 388px;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            // flex-direction: column;
 
             &-title {
                   color: #1d4279;

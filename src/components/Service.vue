@@ -2,7 +2,8 @@
 import Card from "@/components/Card.vue";
 import BreadCrumb from "@/components/BreadCrumb.vue";
 
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
 import Button from "./Button.vue";
 
 const service = ref([
@@ -26,6 +27,25 @@ const service = ref([
             description: "В течении 5 дней вы получаете документы о регистрации. 100% законно и официально!",
       },
 ]);
+// button title
+const buttonTitle = ref("Бесплатная консультация");
+
+const updateButtonTitle = () => {
+      if (window.innerWidth <= 576) {
+            buttonTitle.value = "Консультация";
+      } else {
+            buttonTitle.value = "Бесплатная консультация";
+      }
+};
+
+onMounted(() => {
+      updateButtonTitle();
+      window.addEventListener("resize", updateButtonTitle);
+});
+
+onBeforeUnmount(() => {
+      window.removeEventListener("resize", updateButtonTitle);
+});
 </script>
 
 <template>
@@ -40,7 +60,7 @@ const service = ref([
                   </div>
                   <div class="service__footer">
                         <h5 class="service__footer-title">Стоимость услуги от 4.000 ₽</h5>
-                        <Button class="service__footer-btn" title="Бесплатная консультация" :primary="true" size="medium" />
+                        <Button class="service__footer-btn" :title="buttonTitle" :primary="true" size="medium" />
                   </div>
             </div>
       </section>
