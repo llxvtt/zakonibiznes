@@ -14,7 +14,7 @@ const showMore = () => {
 
 <template>
       <main class="blog">
-            <Articles @showMoreBtn="showMore" :showBreadCrumb="true" btnTitle="Показать еще" btnSize="full" btnColor="gray" :limit="showLimit" />
+            <Articles class="pt-124" @showMoreBtn="showMore" :showBreadCrumb="true" btnTitle="Показать еще" btnSize="full" btnColor="gray" :limit="showLimit" />
             <section>
                   <BannerSecond />
             </section>
@@ -23,8 +23,4 @@ const showMore = () => {
       </main>
 </template>
 
-<style scoped>
-.blog {
-      padding-top: 62px;
-}
-</style>
+<style scoped></style>

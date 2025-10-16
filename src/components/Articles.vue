@@ -105,7 +105,8 @@ const displayedArticles = computed(() => {
             <div class="container">
                   <div class="articles__top section__top">
                         <BreadCrumb v-if="showBreadCrumb" current_page="Полезные статьи" />
-                        <h2 class="articles__top-title section__top-title">Полезные статьи <span>по миграционному законодательству</span></h2>
+                        <h2 v-if="route.path === '/'" class="articles__top-title section__top-title">Полезные статьи <span>по миграционному законодательству</span></h2>
+                        <h1 v-if="route.path === '/blog'" class="articles__top-title articles__top-title--h1 section__top-title">Полезные статьи <span>по миграционному законодательству</span></h1>
                   </div>
 
                   <div class="articles__cards">
@@ -121,5 +122,13 @@ const displayedArticles = computed(() => {
 <style>
 .articles__top-title {
       max-width: 430px;
+}
+.articles__top-title--h1 {
+      max-width: 550px;
+}
+@media (max-width: 576px) {
+      .articles__top-title--h1 span {
+            display: none;
+      }
 }
 </style>

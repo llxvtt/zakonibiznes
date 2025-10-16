@@ -20,7 +20,7 @@ const service = ref([
             title: "Сбор нами всего пакета документов с нотариальным заверением за 1 день",
       },
       {
-            title: "Организуем сдачу документов в ГосУслугах / ОВМ МВД",
+            title: "Организуем сдачу документов в ГосУслугах / ОВМ МВД",
       },
       {
             title: "Результат:",
@@ -38,13 +38,37 @@ const updateButtonTitle = () => {
       }
 };
 
+// section top title
+
+const title = ref({
+      before: "Что вы получите при заказе",
+      span: "помощь в уведомлении мвд о трудоустройстве",
+});
+
+function updateTitle() {
+      if (window.innerWidth <= 576) {
+            title.value = {
+                  before: "Миграционные услуги",
+                  span: "в москве",
+            };
+      } else {
+            title.value = {
+                  before: "Что вы получите при заказе",
+                  span: "помощь в уведомлении мвд о трудоустройстве",
+            };
+      }
+}
+
 onMounted(() => {
       updateButtonTitle();
+      updateTitle();
       window.addEventListener("resize", updateButtonTitle);
+      window.addEventListener("resize", updateTitle);
 });
 
 onBeforeUnmount(() => {
       window.removeEventListener("resize", updateButtonTitle);
+      window.removeEventListener("resize", updateTitle);
 });
 </script>
 
@@ -53,7 +77,9 @@ onBeforeUnmount(() => {
             <div class="container">
                   <div class="service__top section__top">
                         <BreadCrumb current_page="Судебная защита иностранных граждан в Москве" />
-                        <h2 class="service__top-title section__top-title">Что вы получите при заказе <span>помощь в уведомлении мвд о трудоустройстве</span></h2>
+                        <h1 class="service__top-title section__top-title">
+                              {{ title.before }} <span>{{ title.span }}</span>
+                        </h1>
                   </div>
                   <div class="service__cards">
                         <Card class="service__card" v-for="item of service" :key="item" :icon="true" :title="item.title" :description="item.description" />
@@ -66,8 +92,14 @@ onBeforeUnmount(() => {
       </section>
 </template>
 
-<style>
+<style scoped lang="scss">
 .service__top-title {
-      max-width: 650px;
+      max-width: 787px;
+      @media (max-width: 576px) {
+            color: var(--text-red);
+            span {
+                  color: var(--text-darkblue);
+            }
+      }
 }
 </style>

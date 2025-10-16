@@ -10,7 +10,7 @@ body {
       box-sizing: border-box;
       @include media(xl) {
             max-width: 1024px;
-            padding: 0 15px;
+            padding: 0 14px;
       }
 
       @include media(lg) {

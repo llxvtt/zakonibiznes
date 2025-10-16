@@ -5,11 +5,24 @@
             grid-template-columns: 578px auto;
             gap: 34px;
 
+            @include media(lg) {
+                  grid-template-columns: 400px auto;
+                  gap: 24px;
+            }
+
+            @include media(md) {
+                  grid-template-columns: auto;
+                  gap: 24px;
+            }
             // content left
             &-img {
                   width: 100%;
                   border-radius: 8px;
                   overflow: hidden;
+                  object-fit: cover;
+                  @include media(xs) {
+                        height: 292px;
+                  }
             }
             // content right
             &-info {

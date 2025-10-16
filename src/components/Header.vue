@@ -57,7 +57,7 @@ const toggleMenu = () => {
             <nav class="header__nav">
                   <div class="container">
                         <ul class="header__menu">
-                              <li class="header__menu-item"><a href="/" class="header__menu-link">Главная</a></li>
+                              <li class="header__menu-item"><router-link to="/" class="header__menu-link">Главная</router-link></li>
                               <li class="header__menu-item">
                                     <a href="#" class="header__menu-link"
                                           >Для иностранцев
@@ -83,12 +83,12 @@ const toggleMenu = () => {
                                     </div>
                               </li>
                               <li class="header__menu-item">
-                                    <a href="#" class="header__menu-link"
+                                    <router-link to="#" class="header__menu-link"
                                           >Для юр лиц
                                           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7.99986 6.36725L13.7749 0.592247L15.4245 2.24191L7.99986 9.66658L0.575195 2.24191L2.22486 0.592247L7.99986 6.36725Z" fill="#9B2D30" fill-opacity="0.5" />
                                           </svg>
-                                    </a>
+                                    </router-link>
                                     <div class="header__menu-dropdown">
                                           <ul class="header__menu-dropdown-links">
                                                 <li><a href="#!">Подготовка трудового договора</a></li>
@@ -103,12 +103,12 @@ const toggleMenu = () => {
                                     </div>
                               </li>
                               <li class="header__menu-item">
-                                    <a href="#" class="header__menu-link"
+                                    <router-link to="#" class="header__menu-link"
                                           >Для физ лиц
                                           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7.99986 6.36725L13.7749 0.592247L15.4245 2.24191L7.99986 9.66658L0.575195 2.24191L2.22486 0.592247L7.99986 6.36725Z" fill="#9B2D30" fill-opacity="0.5" />
                                           </svg>
-                                    </a>
+                                    </router-link>
 
                                     <div class="header__menu-dropdown">
                                           <ul class="header__menu-dropdown-links">
@@ -118,9 +118,9 @@ const toggleMenu = () => {
                                           </ul>
                                     </div>
                               </li>
-                              <li class="header__menu-item"><a to="/about" class="header__menu-link">О компании</a></li>
-                              <li class="header__menu-item"><a to="/blog" class="header__menu-link">Блог</a></li>
-                              <li class="header__menu-item"><a to="/contacts" class="header__menu-link">Контакты</a></li>
+                              <li class="header__menu-item"><router-link to="/about" class="header__menu-link">О компании</router-link></li>
+                              <li class="header__menu-item"><router-link to="/blog" class="header__menu-link">Блог</router-link></li>
+                              <li class="header__menu-item"><router-link to="/contacts" class="header__menu-link">Контакты</router-link></li>
                         </ul>
                   </div>
             </nav>

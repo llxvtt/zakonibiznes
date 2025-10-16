@@ -5,15 +5,11 @@ import Location from "@/components/Location.vue";
 
 <template>
       <main class="contacts">
-            <Location :showBreadCrumb="true" />
+            <Location class="pt-124" :showBreadCrumb="true" />
             <section>
                   <BannerSecond />
             </section>
       </main>
 </template>
 
-<style scoped>
-.contacts {
-      padding-top: 62px;
-}
-</style>
+<style scoped></style>

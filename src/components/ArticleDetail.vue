@@ -78,7 +78,7 @@ watch(
             <div class="container">
                   <div class="article__top section__top">
                         <BreadCrumb current_page="Полезные статьи" />
-                        <h2 class="article__top-title section__top-title">{{ filteredArticle.title }}</h2>
+                        <h1 class="article__top-title section__top-title">{{ filteredArticle.title }}</h1>
                   </div>
                   <div class="article__content">
                         <div class="article__content-left">

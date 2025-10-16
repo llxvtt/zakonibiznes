@@ -163,7 +163,13 @@ export default {
       height: 65px;
 
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 700;
+
+      @include media(md) {
+            height: 55px;
+            font-size: 14px;
+            font-weight: 700;
+      }
 }
 .btn--large {
       padding: 0 44px;

@@ -2,22 +2,6 @@
 import BreadCrumb from "@/components/BreadCrumb.vue";
 
 import { ref } from "vue";
-
-const privacy = ref([
-      {
-            title: "1. Общие положения",
-            desc: `Настоящая Политика конфиденциальности регулирует порядок обработки и защиты персональных данных пользователей сайта [название проекта/домен] (далее — «Сайт»). Используя Сайт и оставляя свои данные через формы, пользователь подтверждает согласие с условиями настоящей Политики`,
-      },
-      {
-            title: "2. Какие данные мы собираем",
-            desc: `Мы можем собирать следующие данные:
-                    Имя, фамилия (если указаны в формах),
-                    Адрес электронной почты,
-                    Номер телефона,
-                    Ссылки на мессенджеры (например, Telegram),
-                    Иные данные, которые пользователь добровольно оставляет при заполнении форм или в переписке`,
-      },
-]);
 </script>
 
 <template>
@@ -25,7 +9,7 @@ const privacy = ref([
             <div class="container">
                   <div class="privacy__top section__top">
                         <BreadCrumb current_page="Политика конфиденциальности" />
-                        <h2 class="privacy__top-title section__top-title"><span>Политика конфиденциальности</span></h2>
+                        <h1 class="privacy__top-title section__top-title"><span class="privacy__top-title--spanfirst">Политика</span><span class="privacy__top-title--spansecond">Политика конфиденциальности</span></h1>
                   </div>
                   <div class="privacy__content">
                         <div class="privacy__content-text">
@@ -104,29 +88,60 @@ const privacy = ref([
 </template>
 
 <style scoped lang="scss">
+@use "../styles/utils/mixins" as *;
 .privacy {
       padding: 124px 0;
+      @include media(sm) {
+            padding-top: 44px;
+            padding-bottom: 64px;
+      }
       &__content {
             display: grid;
             gap: 34px;
             &-title {
                   color: var(--text-darkblue);
                   margin-bottom: 24px;
+
+                  @include media(sm) {
+                        margin-bottom: 14px;
+                  }
             }
             &-list--item {
                   display: block;
                   position: relative;
                   padding-left: 15px;
+                  @include media(sm) {
+                        padding-left: 0;
+                  }
                   &::before {
                         content: "•";
                         position: absolute;
                         left: 0;
                         color: var(--text-darkblue);
+
+                        @include media(sm) {
+                              content: unset;
+                        }
                   }
             }
       }
 }
 .privacy__top-title {
       max-width: 600px;
+      @include media(md) {
+            max-width: 500px;
+      }
+      &--spanfirst {
+            color: var(--text-darkblue);
+            display: none;
+            @include media(sm) {
+                  display: block;
+            }
+      }
+      &--spansecond {
+            @include media(sm) {
+                  display: none;
+            }
+      }
 }
 </style>

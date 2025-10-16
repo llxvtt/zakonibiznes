@@ -50,6 +50,14 @@
             display: grid;
             grid-template-columns: auto 304px;
             gap: 84px;
+
+            @include media(lg) {
+                  gap: 30px;
+            }
+            @include media(md) {
+                  grid-template-columns: auto;
+                  gap: 64px;
+            }
             &-left {
                   display: grid;
                   gap: 24px;

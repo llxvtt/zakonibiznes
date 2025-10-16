@@ -13,6 +13,7 @@ const props = defineProps({
 .breadcrumb {
       margin-bottom: 24px;
 }
+
 .breadcrumb li {
       font-family: "Montserrat";
       font-weight: 600;
@@ -25,6 +26,9 @@ const props = defineProps({
 }
 
 @media (max-width: 576px) {
+      .breadcrumb {
+            margin-bottom: 14px;
+      }
       .breadcrumb li {
             font-size: 14px;
             font-weight: 600;

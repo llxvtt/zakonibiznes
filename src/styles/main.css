@@ -121,7 +121,7 @@ h1 {
 h1 span {
   color: var(--text-red);
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 28px;
     font-weight: 700;
@@ -149,6 +149,13 @@ h3 {
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
+}
+@media (max-width: 576px) {
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+  }
 }
 
 h4 {
@@ -213,7 +220,7 @@ body {
 @media (max-width: 1240px) {
   .container {
     max-width: 1024px;
-    padding: 0 15px;
+    padding: 0 14px;
   }
 }
 @media (max-width: 1024px) {
@@ -697,6 +704,12 @@ section {
     gap: 10px;
   }
 }
+@media (max-width: 576px) {
+  .hero__info-list {
+    max-width: 400px;
+    gap: 14px;
+  }
+}
 .hero__info-list--item {
   max-width: -moz-max-content;
   max-width: max-content;
@@ -721,6 +734,14 @@ section {
     font-weight: 600;
     line-height: 23px;
     padding: 9px 32px;
+  }
+}
+@media (max-width: 576px) {
+  .hero__info-list--item:nth-child(4) {
+    order: 2;
+  }
+  .hero__info-list--item:nth-child(5) {
+    order: 1;
   }
 }
 .hero__info-btn {
@@ -1175,6 +1196,17 @@ section {
   grid-template-columns: auto 304px;
   gap: 84px;
 }
+@media (max-width: 1024px) {
+  .article__content {
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .article__content {
+    grid-template-columns: auto;
+    gap: 64px;
+  }
+}
 .article__content-left {
   display: grid;
   gap: 24px;
@@ -1372,7 +1404,7 @@ section {
   align-items: center;
   gap: 19px;
   font-family: "Montserrat";
-  font-weight: 700;
+  font-weight: 600;
   font-style: Bold;
   font-size: 16px;
   line-height: 100%;
@@ -1381,7 +1413,7 @@ section {
 @media (max-width: 576px) {
   .contact__list-item a, .contact__list-item {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 100%;
   }
 }
@@ -1390,6 +1422,9 @@ section {
     width: 24px;
     height: 24px;
   }
+}
+.contact__list-item:first-child {
+  font-weight: 700;
 }
 .contact__btns {
   margin-top: 40px;
@@ -1619,10 +1654,29 @@ section {
   grid-template-columns: 578px auto;
   gap: 34px;
 }
+@media (max-width: 1024px) {
+  .about__content {
+    grid-template-columns: 400px auto;
+    gap: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: auto;
+    gap: 24px;
+  }
+}
 .about__content-img {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 375px) {
+  .about__content-img {
+    height: 292px;
+  }
 }
 .about__content-info {
   display: grid;

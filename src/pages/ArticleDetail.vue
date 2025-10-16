@@ -7,7 +7,7 @@ import Location from "@/components/Location.vue";
 
 <template>
       <main class="article">
-            <ArticleDetail />
+            <ArticleDetail class="pt-124" />
             <section>
                   <BannerSecond />
             </section>
@@ -16,8 +16,4 @@ import Location from "@/components/Location.vue";
       </main>
 </template>
 
-<style scoped>
-.article {
-      padding-top: 62px;
-}
-</style>
+<style scoped></style>

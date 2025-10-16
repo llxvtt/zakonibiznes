@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
 
 import Button from "./Button.vue";
 import BreadCrumb from "./BreadCrumb.vue";
@@ -36,7 +38,11 @@ onBeforeUnmount(() => {
             <div class="container">
                   <div class="location__top section__top">
                         <BreadCrumb current_page="Контакты" v-if="showBreadCrumb" />
-                        <h2 class="location__top-title section__top-title"><span>Как добраться</span> до нашего офиса</h2>
+                        <h2 v-if="route.path === '/'" class="location__top-title section__top-title"><span>Как добраться</span> до нашего офиса</h2>
+                        <h1 v-if="route.path === '/contacts'" class="location__top-title location__top-title--h1 section__top-title">
+                              <span>Как добраться</span> <br />
+                              до нашего офиса
+                        </h1>
                   </div>
                   <div class="location__map">
                         <div class="location__map-map" style="position: relative; overflow: hidden"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color: #eee; font-size: 12px; position: absolute; top: 0px"></a><a href="https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.612890%2C55.715021&mode=usermaps&source=mapframe&um=constructor%3Abeb3ab11a54c807386b5ffd23a0a99d07152de146015a900d26a06358226fb57&utm_medium=mapframe&utm_source=maps&z=18" style="color: #eee; font-size: 12px; position: absolute; top: 14px"></a><iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=37.612890%2C55.715021&mode=usermaps&source=mapframe&um=constructor%3Abeb3ab11a54c807386b5ffd23a0a99d07152de146015a900d26a06358226fb57&utm_source=mapframe&z=18" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position: relative" title="yandex map"></iframe></div>
@@ -77,5 +83,8 @@ onBeforeUnmount(() => {
 <style>
 .location__top-title {
       max-width: 378px;
+}
+.location__top-title--h1 {
+      max-width: 510px;
 }
 </style>
