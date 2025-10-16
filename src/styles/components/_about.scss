@@ -20,7 +20,7 @@
                   border-radius: 8px;
                   overflow: hidden;
                   object-fit: cover;
-                  @include media(xs) {
+                  @include media(sm) {
                         height: 292px;
                   }
             }

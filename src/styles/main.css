@@ -1673,7 +1673,7 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   .about__content-img {
     height: 292px;
   }
