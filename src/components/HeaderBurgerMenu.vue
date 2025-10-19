@@ -103,9 +103,9 @@ const toggleAccordion = (key) => {
                                     </transition>
                               </li>
 
-                              <li class="header-menu__menu-item"><router-link to="/about" class="header-menu__menu-link">О компании</router-link></li>
-                              <li class="header-menu__menu-item"><router-link to="/blog" class="header-menu__menu-link">Блог</router-link></li>
-                              <li class="header-menu__menu-item"><router-link to="/contacts" class="header-menu__menu-link">Контакты</router-link></li>
+                              <li class="header-menu__menu-item"><router-link to="/about" class="header-menu__menu-link" @click="emit('close')">О компании</router-link></li>
+                              <li class="header-menu__menu-item"><router-link to="/blog" class="header-menu__menu-link" @click="emit('close')">Блог</router-link></li>
+                              <li class="header-menu__menu-item"><router-link to="/contacts" class="header-menu__menu-link" @click="emit('close')">Контакты</router-link></li>
                         </ul>
                   </nav>
 
