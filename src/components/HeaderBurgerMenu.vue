@@ -40,7 +40,7 @@ const toggleAccordion = (key) => {
                   <nav class="header-menu__nav">
                         <ul class="header-menu__menu">
                               <li class="header-menu__menu-item">
-                                    <router-link to="/" class="header-menu__menu-link">Главная</router-link>
+                                    <router-link to="/" class="header-menu__menu-link" @click="emit('close')">Главная</router-link>
                               </li>
 
                               <li class="header-menu__menu-item">
