@@ -527,7 +527,7 @@ section {
 .header-menu .container {
   height: 100%;
   display: grid;
-  grid-template-rows: max-content max-content auto;
+  grid-template-rows: max-content auto max-content;
 }
 .header-menu__top {
   padding: 24px 0;
@@ -550,11 +550,6 @@ section {
   display: grid;
   grid-template-columns: auto 50px;
   gap: 14px;
-}
-@media (max-width: 1240px) {
-  .header-menu__search {
-    transform: translateX(-30px);
-  }
 }
 @media (max-width: 1024px) {
   .header-menu__search {
@@ -630,6 +625,7 @@ section {
   fill: var(--btn-green);
 }
 .header-menu__nav {
+  overflow-y: auto;
   padding: 22px 0;
 }
 .header-menu__menu {
@@ -641,8 +637,7 @@ section {
   align-items: center;
   gap: 14px;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 100%;
   text-transform: uppercase;
   color: var(--text-darkblue);

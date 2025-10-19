@@ -1,7 +1,17 @@
 <script setup>
+import { ref } from "vue";
 import Button from "@/components/Button.vue";
-
 const emit = defineEmits(["close"]);
+
+const accordions = ref({
+      foreigners: false,
+      legal: false,
+      personal: false,
+});
+
+const toggleAccordion = (key) => {
+      accordions.value[key] = !accordions.value[key];
+};
 </script>
 
 <template>
@@ -9,12 +19,9 @@ const emit = defineEmits(["close"]);
             <div class="container">
                   <div class="header-menu__top">
                         <div class="header-menu__top-wrapper">
-                              <!-- header-menu logo  -->
                               <a href="#!" class="header-menu__logo">
                                     <img src="../assets/images/logo.svg" alt="logo" />
                               </a>
-
-                              <!-- close burger button -->
                               <button class="header-menu__top-burger" @click="emit('close')">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                           <path d="M15 13.2325L21.1875 7.045L22.955 8.8125L16.7675 15L22.955 21.1875L21.1875 22.955L15 16.7675L8.81248 22.955L7.04498 21.1875L13.2325 15L7.04498 8.8125L8.81248 7.045L15 13.2325Z" fill="#1D4279" fill-opacity="0.5" />
@@ -22,7 +29,6 @@ const emit = defineEmits(["close"]);
                               </button>
                         </div>
 
-                        <!-- header-menu search  -->
                         <div class="header-menu__search">
                               <input type="text" class="header-menu__search-input" placeholder="Поиск по сайту" />
                               <button class="header-menu__search-btn">
@@ -32,28 +38,74 @@ const emit = defineEmits(["close"]);
                   </div>
 
                   <nav class="header-menu__nav">
-                        <ul class="header-menu__menu" @click="emit('close')">
+                        <ul class="header-menu__menu">
                               <li class="header-menu__menu-item">
                                     <router-link to="/" class="header-menu__menu-link">Главная</router-link>
                               </li>
-                              <li class="header-menu__menu-item header-menu__menu-item--dropdown">
-                                    <a href="#" class="header-menu__menu-link"> Для иностранцев <img src="/icons/arrow-down.svg" alt="icon" /> </a>
-                              </li>
-                              <li class="header-menu__menu-item header-menu__menu-item--dropdown">
-                                    <a href="#" class="header-menu__menu-link"> Для юр лиц <img src="/icons/arrow-down.svg" alt="icon" /> </a>
-                              </li>
-                              <li class="header-menu__menu-item header-menu__menu-item--dropdown">
-                                    <a href="#" class="header-menu__menu-link"> Для физ лиц <img src="/icons/arrow-down.svg" alt="icon" /> </a>
-                              </li>
+
                               <li class="header-menu__menu-item">
-                                    <router-link to="/about" class="header-menu__menu-link">О компании</router-link>
+                                    <button class="header-menu__menu-link" @click.stop="toggleAccordion('foreigners')">
+                                          Для иностранцев
+                                          <svg width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg">
+                                                <path :class="{ open: accordions.foreigners }" d="M7 5.46973L12.4697 0L14 1.53027L7 8.53027L0 1.53027L1.53027 0L7 5.46973Z" fill="#9B2D30" />
+                                          </svg>
+                                    </button>
+                                    <transition name="accordion">
+                                          <ul v-show="accordions.foreigners" class="header-menu__submenu" @click="emit('close')">
+                                                <li><a href="#!">Получение квоты</a></li>
+                                                <li><a href="#!">Получение РВП РФ</a></li>
+                                                <li><a href="#!">Получение ВНЖ</a></li>
+                                                <li><a href="#!">Получение гражданства РФ</a></li>
+                                                <li><a href="#!">Получение статуса НРЯ</a></li>
+                                                <li><a href="#!">Судебная защита</a></li>
+                                                <li><a href="#!">Получение ИНН</a></li>
+                                                <li><a href="#!">Получение СНИЛС</a></li>
+                                                <li><a href="#!">Восстановление документов</a></li>
+                                                <li><a href="#!">Подача запросов</a></li>
+                                          </ul>
+                                    </transition>
                               </li>
+
                               <li class="header-menu__menu-item">
-                                    <router-link to="/blog" class="header-menu__menu-link">Блог</router-link>
+                                    <button class="header-menu__menu-link" @click.stop="toggleAccordion('legal')">
+                                          Для юр лиц
+                                          <svg width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg">
+                                                <path :class="{ open: accordions.legal }" d="M7 5.46973L12.4697 0L14 1.53027L7 8.53027L0 1.53027L1.53027 0L7 5.46973Z" fill="#9B2D30" />
+                                          </svg>
+                                    </button>
+                                    <transition name="accordion">
+                                          <ul v-show="accordions.legal" class="header-menu__submenu" @click="emit('close')">
+                                                <li><a href="#!">Подготовка трудового договора</a></li>
+                                                <li><a href="#!">Уведомление о приеме иностранца</a></li>
+                                                <li><a href="#!">Регистрация иностранцев</a></li>
+                                                <li><a href="#!">Судебная защита работодателей</a></li>
+                                                <li><a href="#!">Миграционный аудит</a></li>
+                                                <li><a href="#!">Оформление ИНН</a></li>
+                                                <li><a href="#!">Оформление СНИЛС</a></li>
+                                                <li><a href="#!">Как принять на работу мигранта</a></li>
+                                          </ul>
+                                    </transition>
                               </li>
+
                               <li class="header-menu__menu-item">
-                                    <router-link to="/contacts" class="header-menu__menu-link">Контакты</router-link>
+                                    <button class="header-menu__menu-link" @click.stop="toggleAccordion('personal')">
+                                          Для физ лиц
+                                          <svg width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg">
+                                                <path :class="{ open: accordions.personal }" d="M7 5.46973L12.4697 0L14 1.53027L7 8.53027L0 1.53027L1.53027 0L7 5.46973Z" fill="#9B2D30" />
+                                          </svg>
+                                    </button>
+                                    <transition name="accordion">
+                                          <ul v-show="accordions.personal" class="header-menu__submenu" @click="emit('close')">
+                                                <li><a href="#!">Подготовка трудового договора</a></li>
+                                                <li><a href="#!">Регистрация иностранцев</a></li>
+                                                <li><a href="#!">Уведомление о приеме на работу</a></li>
+                                          </ul>
+                                    </transition>
                               </li>
+
+                              <li class="header-menu__menu-item"><router-link to="/about" class="header-menu__menu-link">О компании</router-link></li>
+                              <li class="header-menu__menu-item"><router-link to="/blog" class="header-menu__menu-link">Блог</router-link></li>
+                              <li class="header-menu__menu-item"><router-link to="/contacts" class="header-menu__menu-link">Контакты</router-link></li>
                         </ul>
                   </nav>
 
@@ -62,12 +114,10 @@ const emit = defineEmits(["close"]);
                               <img class="header__phone-icon" src="/icons/device.svg" alt="icon" />
                               <span class="header__phone-number">+7 (495) 431-01-20</span>
                         </a>
-
-                        <!-- header contact button -->
                         <Button class="header-menu__contacts-btn" :green="true" size="small" title="Написать в WhatsApp">
                               <template #icon>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M6.46189 19.5763L7.30656 20.0698C8.73099 20.9006 10.3511 21.3367 12.0001 21.3333C13.846 21.3333 15.6505 20.786 17.1854 19.7604C18.7202 18.7348 19.9165 17.2772 20.6229 15.5717C21.3293 13.8663 21.5142 11.9897 21.1541 10.1792C20.7939 8.36868 19.905 6.70564 18.5997 5.40035C17.2944 4.09506 15.6314 3.20614 13.8209 2.84601C12.0104 2.48589 10.1338 2.67072 8.42834 3.37713C6.7229 4.08355 5.26523 5.27983 4.23967 6.81469C3.21411 8.34955 2.66672 10.1541 2.66672 12C2.66672 13.6753 3.10656 15.2818 3.93139 16.6947L4.42372 17.5393L3.66189 20.3405L6.46189 19.5763ZM0.338056 23.6667L1.91539 17.8707C0.876051 16.089 0.330002 14.0627 0.33339 12C0.33339 5.55651 5.55656 0.333344 12.0001 0.333344C18.4436 0.333344 23.6667 5.55651 23.6667 12C23.6667 18.4435 18.4436 23.6667 12.0001 23.6667C9.9383 23.67 7.91282 23.1244 6.13172 22.0858L0.338056 23.6667Z" fill="white" />
+                                          <path d="M6.46 19.57L7.3 20.07C8.73 20.9 10.35 21.33 12 21.33C13.84 21.33 15.65 20.78 17.18 19.76C18.72 18.73 19.91 17.27 20.62 15.57C21.32 13.86 21.51 11.98 21.15 10.17C20.79 8.36 19.9 6.7 18.59 5.4C17.29 4.09 15.63 3.2 13.82 2.84C12.01 2.48 10.13 2.67 8.42 3.37C6.72 4.08 5.26 5.27 4.23 6.81C3.21 8.35 2.66 10.15 2.66 12C2.66 13.67 3.1 15.28 3.93 16.69L4.42 17.53L3.66 20.33L6.46 19.57Z" fill="white" />
                                     </svg>
                               </template>
                         </Button>
@@ -76,4 +126,46 @@ const emit = defineEmits(["close"]);
       </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+.header-menu__submenu {
+      overflow: hidden;
+      padding-top: 24px;
+      padding-left: 10px;
+      display: grid;
+      gap: 14px;
+}
+.accordion-enter-active,
+.accordion-leave-active {
+      transition: all 0.3s ease;
+}
+.accordion-enter-from,
+.accordion-leave-to {
+      max-height: 0;
+      opacity: 0;
+}
+.accordion-enter-to,
+.accordion-leave-from {
+      max-height: 500px;
+      opacity: 1;
+}
+.header-menu__menu-link svg {
+      transition: transform 0.3s ease;
+}
+.header-menu__menu-link svg path.open {
+      transform: rotate(180deg);
+      transform-origin: center;
+}
+.header-menu__submenu li a {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: var(--text-darkblue);
+      display: block;
+      padding: 5px 0;
+      transition: 0.3s ease;
+}
+.header-menu__submenu li a:hover {
+      color: var(--text-red);
+}
+</style>
