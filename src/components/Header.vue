@@ -8,6 +8,103 @@ const isMenuOpen = ref(false);
 const toggleMenu = () => {
       isMenuOpen.value = !isMenuOpen.value;
 };
+
+const header_menu = ref({
+      link_first: [
+            {
+                  id: 1,
+                  text: "Получение квоты",
+            },
+            {
+                  id: 2,
+                  text: "получение рвп рф",
+            },
+            {
+                  id: 3,
+                  text: "получение рвпо",
+            },
+            {
+                  id: 4,
+                  text: "получение внж",
+            },
+            {
+                  id: 5,
+                  text: "пОЛУЧЕНИЕ ГРАЖДАНСТВА РФ",
+            },
+            {
+                  id: 6,
+                  text: "пОЛУЧЕНИЕ СТАТУСА НРЯ",
+            },
+            {
+                  id: 7,
+                  text: "СУДЕБНАЯ ЗАЩИТА",
+            },
+            {
+                  id: 8,
+                  text: "ПОЛУЧЕНИЕ ИНН",
+            },
+            {
+                  id: 9,
+                  text: "ПОЛУЧЕНИЕ СНИЛС",
+            },
+            {
+                  id: 10,
+                  text: "ВОССТАНОВЛЕНИЕ ДОКУМЕНТОВ",
+            },
+            {
+                  id: 11,
+                  text: "ПОДАЧА ЗАПРОСОВ",
+            },
+      ],
+      link_second: [
+            {
+                  id: 12,
+                  text: "Подготовка трудового договора",
+            },
+            {
+                  id: 13,
+                  text: "уведомление о приеме на работу иностранца",
+            },
+            {
+                  id: 14,
+                  text: "регистрация иностранцев",
+            },
+            {
+                  id: 15,
+                  text: "судебная защита работодателей",
+            },
+            {
+                  id: 16,
+                  text: "миграционный аудит",
+            },
+            {
+                  id: 17,
+                  text: "оформление инн для иностранца",
+            },
+            {
+                  id: 18,
+                  text: "оформление снилс для иностранца",
+            },
+            {
+                  id: 19,
+                  text: "как принять на работу мигранта",
+            },
+      ],
+      link_third: [
+            {
+                  id: 20,
+                  text: "ПОДГОТОВКА ТРУДОВОГО ДОГОВОРА",
+            },
+            {
+                  id: 21,
+                  text: "РЕГИСТРАЦИЯ ИНОСТРАНЦЕВ",
+            },
+            {
+                  id: 22,
+                  text: "УВЕДОМЛЕНИЕ О ПРИЕМЕ НА РАБОТУ",
+            },
+      ],
+});
 </script>
 
 <template>
@@ -68,17 +165,9 @@ const toggleMenu = () => {
 
                                     <div class="header__menu-dropdown">
                                           <ul class="header__menu-dropdown-links">
-                                                <li><a href="#!">Получение квоты</a></li>
-                                                <li><a href="#!">получение рвп рф</a></li>
-                                                <li><a href="#!">получение рвпо</a></li>
-                                                <li><a href="#!">получение внж</a></li>
-                                                <li><a href="#!">пОЛУЧЕНИЕ ГРАЖДАНСТВА РФ</a></li>
-                                                <li><a href="#!">пОЛУЧЕНИЕ СТАТУСА НРЯ</a></li>
-                                                <li><a href="#!">СУДЕБНАЯ ЗАЩИТА</a></li>
-                                                <li><a href="#!">ПОЛУЧЕНИЕ ИНН</a></li>
-                                                <li><a href="#!">ПОЛУЧЕНИЕ СНИЛС</a></li>
-                                                <li><a href="#!">ВОССТАНОВЛЕНИЕ ДОКУМЕНТОВ</a></li>
-                                                <li><a href="#!">ПОДАЧА ЗАПРОСОВ</a></li>
+                                                <li v-for="item of header_menu.link_first" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </div>
                               </li>
@@ -91,14 +180,9 @@ const toggleMenu = () => {
                                     </router-link>
                                     <div class="header__menu-dropdown">
                                           <ul class="header__menu-dropdown-links">
-                                                <li><a href="#!">Подготовка трудового договора</a></li>
-                                                <li><a href="#!">уведомление о приеме на работу иностранца</a></li>
-                                                <li><a href="#!">регистрация иностранцев</a></li>
-                                                <li><a href="#!">судебная защита работодателей</a></li>
-                                                <li><a href="#!">миграционный аудит</a></li>
-                                                <li><a href="#!">оформление инн для иностранца</a></li>
-                                                <li><a href="#!">оформление снилс для иностранца</a></li>
-                                                <li><a href="#!">как принять на работу мигранта</a></li>
+                                                <li v-for="item of header_menu.link_second" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </div>
                               </li>
@@ -112,9 +196,9 @@ const toggleMenu = () => {
 
                                     <div class="header__menu-dropdown">
                                           <ul class="header__menu-dropdown-links">
-                                                <li><a href="#!">ПОДГОТОВКА ТРУДОВОГО ДОГОВОРА</a></li>
-                                                <li><a href="#!">РЕГИСТРАЦИЯ ИНОСТРАНЦЕВ</a></li>
-                                                <li><a href="#!">УВЕДОМЛЕНИЕ О ПРИЕМЕ НА РАБОТУ</a></li>
+                                                <li v-for="item of header_menu.link_third" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </div>
                               </li>

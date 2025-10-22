@@ -2,8 +2,11 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./Button.vue";
 
-const buttonTitle = ref("Бесплатная консультация");
+const props = defineProps({
+      reasons: Object,
+});
 
+const buttonTitle = ref("Бесплатная консультация");
 const updateButtonTitle = () => {
       if (window.innerWidth <= 576) {
             buttonTitle.value = "Консультация";
@@ -26,7 +29,7 @@ onBeforeUnmount(() => {
       <section class="reasons">
             <div class="container">
                   <div class="reasons__top section__top">
-                        <h2 class="reasons__top-title section__top-title">Почему заказывают помощь юристов в суде для иностранцев?</h2>
+                        <h2 class="reasons__top-title section__top-title">{{ reasons.title }}</h2>
                   </div>
                   <div class="reasons__highlight">
                         <h4 class="reasons__highlight-title">Самое главное!</h4>
@@ -37,16 +40,7 @@ onBeforeUnmount(() => {
                         </p>
                   </div>
                   <div class="reasons__content">
-                        <p class="reasons__content-list">
-                              Хотите защитить свои права и интересы, но вы иностранец в Москве? Не знаете, как это сделать? Тогда наша услуга судебной защиты иностранцев — именно то, что вам нужно! Мы предлагаем профессиональную юридическую помощь для защиты ваших прав в суде. Наши специалисты имеют большой опыт работы с иностранными гражданами и знают все нюансы законодательства. Наша услуга включает в себя следующие виды услуг
-                              <br /><br />
-                              <span class="reasons__content-list--item">Консультация по вопросам судебного процесса и защита ваших интересов в суде;</span>
-                              <span class="reasons__content-list--item">Подготовка документов для подачи иска в суд;</span>
-                              <span class="reasons__content-list--item">Представление интересов в суде на всех этапах процесса;</span>
-                              <span class="reasons__content-list--item">Помощь в получении необходимых документов и разрешений на ведение судебного процесса.</span>
-                              <br />
-                              Наши услуги доступны для всех иностранных граждан, которые находятся в Москве или за пределами РФ и имеют проблемы с законом (были подвергнуты депортации или выдворению). Мы гарантируем конфиденциальность и высокое качество нашей работы. Не откладывайте защиту своих прав на потом! Обратитесь к нам уже сегодня и получите квалифицированную юридическую помощь!
-                        </p>
+                        <p class="reasons__content-list" v-html="reasons.desc"></p>
                         <Button class="reasons__content-btn" :title="buttonTitle" :primary="true" size="large" />
                   </div>
             </div>
