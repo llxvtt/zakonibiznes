@@ -12,6 +12,103 @@ const accordions = ref({
 const toggleAccordion = (key) => {
       accordions.value[key] = !accordions.value[key];
 };
+
+const header_menu = ref({
+      link_first: [
+            {
+                  id: 1,
+                  text: "Получение квоты",
+            },
+            {
+                  id: 2,
+                  text: "получение рвп рф",
+            },
+            {
+                  id: 3,
+                  text: "получение рвпо",
+            },
+            {
+                  id: 4,
+                  text: "получение внж",
+            },
+            {
+                  id: 5,
+                  text: "пОЛУЧЕНИЕ ГРАЖДАНСТВА РФ",
+            },
+            {
+                  id: 6,
+                  text: "пОЛУЧЕНИЕ СТАТУСА НРЯ",
+            },
+            {
+                  id: 7,
+                  text: "СУДЕБНАЯ ЗАЩИТА",
+            },
+            {
+                  id: 8,
+                  text: "ПОЛУЧЕНИЕ ИНН",
+            },
+            {
+                  id: 9,
+                  text: "ПОЛУЧЕНИЕ СНИЛС",
+            },
+            {
+                  id: 10,
+                  text: "ВОССТАНОВЛЕНИЕ ДОКУМЕНТОВ",
+            },
+            {
+                  id: 11,
+                  text: "ПОДАЧА ЗАПРОСОВ",
+            },
+      ],
+      link_second: [
+            {
+                  id: 12,
+                  text: "Подготовка трудового договора",
+            },
+            {
+                  id: 13,
+                  text: "уведомление о приеме на работу иностранца",
+            },
+            {
+                  id: 14,
+                  text: "регистрация иностранцев",
+            },
+            {
+                  id: 15,
+                  text: "судебная защита работодателей",
+            },
+            {
+                  id: 16,
+                  text: "миграционный аудит",
+            },
+            {
+                  id: 17,
+                  text: "оформление инн для иностранца",
+            },
+            {
+                  id: 18,
+                  text: "оформление снилс для иностранца",
+            },
+            {
+                  id: 19,
+                  text: "как принять на работу мигранта",
+            },
+      ],
+      link_third: [
+            {
+                  id: 20,
+                  text: "ПОДГОТОВКА ТРУДОВОГО ДОГОВОРА",
+            },
+            {
+                  id: 21,
+                  text: "РЕГИСТРАЦИЯ ИНОСТРАНЦЕВ",
+            },
+            {
+                  id: 22,
+                  text: "УВЕДОМЛЕНИЕ О ПРИЕМЕ НА РАБОТУ",
+            },
+      ],
+});
 </script>
 
 <template>
@@ -52,16 +149,9 @@ const toggleAccordion = (key) => {
                                     </button>
                                     <transition name="accordion">
                                           <ul v-show="accordions.foreigners" class="header-menu__submenu" @click="emit('close')">
-                                                <li><a href="#!">Получение квоты</a></li>
-                                                <li><a href="#!">Получение РВП РФ</a></li>
-                                                <li><a href="#!">Получение ВНЖ</a></li>
-                                                <li><a href="#!">Получение гражданства РФ</a></li>
-                                                <li><a href="#!">Получение статуса НРЯ</a></li>
-                                                <li><a href="#!">Судебная защита</a></li>
-                                                <li><a href="#!">Получение ИНН</a></li>
-                                                <li><a href="#!">Получение СНИЛС</a></li>
-                                                <li><a href="#!">Восстановление документов</a></li>
-                                                <li><a href="#!">Подача запросов</a></li>
+                                                <li v-for="item of header_menu.link_first" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </transition>
                               </li>
@@ -75,14 +165,9 @@ const toggleAccordion = (key) => {
                                     </button>
                                     <transition name="accordion">
                                           <ul v-show="accordions.legal" class="header-menu__submenu" @click="emit('close')">
-                                                <li><a href="#!">Подготовка трудового договора</a></li>
-                                                <li><a href="#!">Уведомление о приеме иностранца</a></li>
-                                                <li><a href="#!">Регистрация иностранцев</a></li>
-                                                <li><a href="#!">Судебная защита работодателей</a></li>
-                                                <li><a href="#!">Миграционный аудит</a></li>
-                                                <li><a href="#!">Оформление ИНН</a></li>
-                                                <li><a href="#!">Оформление СНИЛС</a></li>
-                                                <li><a href="#!">Как принять на работу мигранта</a></li>
+                                                <li v-for="item of header_menu.link_second" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </transition>
                               </li>
@@ -96,9 +181,9 @@ const toggleAccordion = (key) => {
                                     </button>
                                     <transition name="accordion">
                                           <ul v-show="accordions.personal" class="header-menu__submenu" @click="emit('close')">
-                                                <li><a href="#!">Подготовка трудового договора</a></li>
-                                                <li><a href="#!">Регистрация иностранцев</a></li>
-                                                <li><a href="#!">Уведомление о приеме на работу</a></li>
+                                                <li v-for="item of header_menu.link_third" :key="item">
+                                                      <router-link :to="`/service/${item.id}`">{{ item.text }}</router-link>
+                                                </li>
                                           </ul>
                                     </transition>
                               </li>
