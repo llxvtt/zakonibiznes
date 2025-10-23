@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useSearchStore } from "@/stores/search";
+import { debounce } from "lodash-es";
+
 import Button from "@/components/Button.vue";
 
 const emit = defineEmits(["close"]);
@@ -118,14 +120,15 @@ const header_menu = ref({
       ],
 });
 
-const handleSearch = () => {
-      if (!searchValue.value.trim()) {
+const handleSearch = debounce(() => {
+      const query = searchValue.value.trim();
+      if (query.length < 3) {
             showDropdown.value = false;
             return;
       }
-      store.search(searchValue.value);
+      store.search(query);
       showDropdown.value = true;
-};
+}, 400);
 
 const goToResult = (type, id) => {
       showDropdown.value = false;
