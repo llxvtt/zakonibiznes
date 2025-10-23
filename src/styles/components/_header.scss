@@ -264,6 +264,7 @@
             display: grid;
             grid-template-columns: auto 50px;
             gap: 14px;
+            position: relative;
             @include media(lg) {
                   transform: unset;
             }

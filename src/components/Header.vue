@@ -293,10 +293,11 @@ const goToResult = (type, id) => {
       list-style: none;
       margin: 0;
       padding: 0;
+      padding-top: 5px;
 }
 .search-dropdown li {
       cursor: pointer;
-      padding-top: 10px;
+      padding: 5px;
       font-size: 16px;
       font-weight: 600;
       color: var(--text-darkblue);

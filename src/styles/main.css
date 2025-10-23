@@ -550,6 +550,7 @@ section {
   display: grid;
   grid-template-columns: auto 50px;
   gap: 14px;
+  position: relative;
 }
 @media (max-width: 1024px) {
   .header-menu__search {
