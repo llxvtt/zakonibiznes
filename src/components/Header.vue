@@ -1,8 +1,15 @@
 <script setup>
 import { ref } from "vue";
+import { useSearchStore } from "@/stores/search";
+
 import Button from "@/components/Button.vue";
 import HeaderBurgerMenu from "@/components/HeaderBurgerMenu.vue";
 
+import { useRouter } from "vue-router";
+const store = useSearchStore();
+const router = useRouter();
+const searchValue = ref("");
+const showDropdown = ref(false);
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -105,6 +112,22 @@ const header_menu = ref({
             },
       ],
 });
+
+const handleSearch = () => {
+      if (!searchValue.value.trim()) {
+            showDropdown.value = false;
+            return;
+      }
+      store.search(searchValue.value);
+      showDropdown.value = true;
+};
+
+const goToResult = (type, id) => {
+      showDropdown.value = false;
+      searchValue.value = "";
+      if (type === "service") router.push(`/service/${id}`);
+      else if (type === "article") router.push(`/article/${id}`);
+};
 </script>
 
 <template>
@@ -124,10 +147,32 @@ const header_menu = ref({
                         </div>
                         <!-- header search  -->
                         <div class="header__search">
-                              <input type="text" class="header__search-input" placeholder="Поиск по сайту" />
+                              <input v-model="searchValue" type="text" class="header__search-input" placeholder="Поиск по сайту" @input="handleSearch" />
                               <button class="header__search-btn">
                                     <img src="/icons/search.svg" alt="icon" />
                               </button>
+
+                              <div v-if="showDropdown" class="search-dropdown">
+                                    <template v-if="store.results.services.length">
+                                          <span>Услуги</span>
+                                          <ul>
+                                                <li v-for="s in store.results.services" :key="s.id" @click="goToResult('service', s.id)">
+                                                      {{ s.title }}
+                                                </li>
+                                          </ul>
+                                    </template>
+
+                                    <template v-if="store.results.articles.length">
+                                          <span>Блог</span>
+                                          <ul>
+                                                <li v-for="a in store.results.articles" :key="a.id" @click="goToResult('article', a.id)">
+                                                      {{ a.title }}
+                                                </li>
+                                          </ul>
+                                    </template>
+
+                                    <p v-if="!store.results.services.length && !store.results.articles.length && searchValue">Ничего не найдено</p>
+                              </div>
                         </div>
 
                         <!-- header contacts -->
@@ -224,5 +269,41 @@ const header_menu = ref({
 .slide-leave-to {
       opacity: 0;
       transform: translateX(-100%);
+}
+
+.header__search {
+      position: relative;
+}
+
+.search-dropdown {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ddd;
+      top: 105%;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 1px 5px 17px -6px rgba(0, 0, 0, 0.68);
+      -webkit-box-shadow: 1px 5px 17px -6px rgba(0, 0, 0, 0.68);
+      -moz-box-shadow: 1px 5px 17px -6px rgba(0, 0, 0, 0.68);
+}
+.search-dropdown ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+}
+.search-dropdown li {
+      cursor: pointer;
+      padding-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-darkblue);
+}
+.search-dropdown span {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-red);
 }
 </style>
