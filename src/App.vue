@@ -1,12 +1,12 @@
 <script setup>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import Modal from "@/components/FormModal.vue";
 </script>
 
 <template>
       <Header />
       <RouterView />
       <Footer />
+      <Modal />
 </template>
-
-<style scoped lang="scss"></style>

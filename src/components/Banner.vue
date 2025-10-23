@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./Button.vue";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
 
 const buttonTitle = ref("Бесплатная консультация");
 
@@ -29,7 +31,7 @@ onBeforeUnmount(() => {
                         <!-- banner info title  -->
                         <h4 class="banner__title">Получить бесплатную консультацию</h4>
                         <!-- banner info buttons  -->
-                        <Button class="banner__btn" :secondary="true" size="large" :title="buttonTitle" />
+                        <Button class="banner__btn" @click="openModal" :secondary="true" size="large" :title="buttonTitle" />
                   </div>
             </div>
       </div>

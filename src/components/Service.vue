@@ -2,6 +2,8 @@
 import Card from "@/components/Card.vue";
 import BreadCrumb from "@/components/BreadCrumb.vue";
 import Button from "@/components/Button.vue";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const props = defineProps({
@@ -45,7 +47,7 @@ onBeforeUnmount(() => {
                   </div>
                   <div class="service__footer">
                         <h5 class="service__footer-title">Стоимость услуги от {{ price }}</h5>
-                        <Button class="service__footer-btn" :title="buttonTitle" :primary="true" size="medium" />
+                        <Button class="service__footer-btn" @click="openModal" :title="buttonTitle" :primary="true" size="medium" />
                   </div>
             </div>
       </section>

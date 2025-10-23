@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./Button.vue";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
 
 const buttonTitle = ref("Консультация");
 
@@ -28,7 +30,7 @@ onBeforeUnmount(() => {
                   <!-- consult info title  -->
                   <h5 class="consult__info-title">Нужна консультация по этому вопросу?</h5>
                   <!-- consult info buttons  -->
-                  <Button class="consult__info-btn" :secondary="true" size="medium" :title="buttonTitle" />
+                  <Button class="consult__info-btn" @click="openModal" :secondary="true" size="medium" :title="buttonTitle" />
             </div>
       </div>
 </template>
@@ -63,6 +65,9 @@ onBeforeUnmount(() => {
             &-btn {
                   width: 100%;
                   margin-top: 24px;
+            }
+            &-btn:hover {
+                  color: var(--text-red);
             }
       }
 }

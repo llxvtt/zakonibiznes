@@ -13,6 +13,8 @@ import BannerSecond from "@/components/BannerSecond.vue";
 import Reviews from "@/components/Reviews.vue";
 import Location from "@/components/Location.vue";
 
+import FormModal from "@/components/FormModal.vue";
+
 // btn title
 const buttonTitle = ref("Больше полезных статей");
 
@@ -36,6 +38,7 @@ onBeforeUnmount(() => {
 
 <template>
       <main>
+            <FormModal />
             <Hero />
             <Benefits />
             <Products />

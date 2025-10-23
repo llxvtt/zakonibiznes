@@ -4,7 +4,6 @@ import Button from "./Button.vue";
 const props = defineProps({
       id: Number,
       icon: Boolean,
-      id: Number,
       title: String,
       description: String,
       price: String,

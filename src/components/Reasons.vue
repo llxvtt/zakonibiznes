@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./Button.vue";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
 
 const props = defineProps({
       reasons: Object,
@@ -41,7 +43,7 @@ onBeforeUnmount(() => {
                   </div>
                   <div class="reasons__content">
                         <p class="reasons__content-list" v-html="reasons.desc"></p>
-                        <Button class="reasons__content-btn" :title="buttonTitle" :primary="true" size="large" />
+                        <Button class="reasons__content-btn" @click="openModal" :title="buttonTitle" :primary="true" size="large" />
                   </div>
             </div>
       </section>

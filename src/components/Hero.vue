@@ -1,5 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
+
 import Button from "@/components/Button.vue";
 
 const buttonTitle = ref("Бесплатная консультация");
@@ -36,7 +39,7 @@ onBeforeUnmount(() => {
                               <li class="hero__info-list--item">Помощь юрлицам</li>
                               <li class="hero__info-list--item">Получение гражданства РФ,</li>
                         </ul>
-                        <Button class="hero__info-btn" :title="buttonTitle" :primary="true" size="large" />
+                        <Button class="hero__info-btn" @click="openModal" :title="buttonTitle" :primary="true" size="large" />
                   </div>
                   <img class="hero__image" src="/src/assets/images/haro.webp" alt="hero-image" />
             </div>

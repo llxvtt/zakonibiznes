@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useRoute } from "vue-router";
+import { useModal } from "@/composables/modal";
+const { openModal } = useModal();
 
 const route = useRoute();
 
@@ -44,7 +46,7 @@ onBeforeUnmount(() => {
                               <div class="about__content-info">
                                     <p v-for="item of about" :key="item">{{ item }}</p>
                               </div>
-                              <Button class="about__content-btn" :title="buttonTitle" :primary="true" size="large" />
+                              <Button class="about__content-btn" @click="openModal" :title="buttonTitle" :primary="true" size="large" />
                         </div>
                   </div>
             </div>
