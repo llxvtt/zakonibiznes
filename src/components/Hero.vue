@@ -34,8 +34,8 @@ onBeforeUnmount(() => {
                         <!-- list -->
                         <ul class="hero__info-list">
                               <li class="hero__info-list--item">Оформление КВОТЫ,</li>
-                              <li class="hero__info-list--item">Получение РВП РФ,</li>
-                              <li class="hero__info-list--item">Получение ВНЖ РФ,</li>
+                              <li class="hero__info-list--item">Получение РВП РФ</li>
+                              <li class="hero__info-list--item">Получение ВНЖ РФ</li>
                               <li class="hero__info-list--item">Помощь юрлицам</li>
                               <li class="hero__info-list--item">Получение гражданства РФ,</li>
                         </ul>
