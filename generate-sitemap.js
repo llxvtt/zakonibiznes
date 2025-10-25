@@ -8,8 +8,52 @@ const __dirname = path.dirname(__filename);
 
 const hostname = "http://localhost:5173";
 
-const routes = ["/", "/about", "/blog", "/contacts", "/privacy", "/service/1", "/service/2", "/article/1", "/article/2"];
+// Routelarni qo‘lda (router/index.js dagidek) yozamiz
+const routes = [
+      "/",
+      "/about",
+      "/blog",
+      "/contacts",
+      "/privacy",
+      // dinamic pages
+      // -service
+      "/service/1",
+      "/service/2",
+      "/service/3",
+      "/service/4",
+      "/service/5",
+      "/service/6",
+      "/service/7",
+      "/service/8",
+      "/service/9",
+      "/service/10",
+      "/service/11",
+      "/service/12",
+      "/service/13",
+      "/service/14",
+      "/service/15",
+      "/service/16",
+      "/service/17",
+      "/service/18",
+      "/service/19",
+      "/service/20",
+      "/service/21",
+      // -article
+      "/article/1",
+      "/article/2",
+      "/article/3",
+      "/article/4",
+      "/article/5",
+      "/article/6",
+      "/article/7",
+      "/article/8",
+      "/article/9",
+      "/article/10",
+      "/article/11",
+      "/article/12",
+];
 
+// Sitemap yaratish
 const sitemapStream = new SitemapStream({ hostname });
 
 routes.forEach((route) => {
@@ -22,6 +66,7 @@ routes.forEach((route) => {
 
 sitemapStream.end();
 
+// XML faylga yozish
 const distPath = path.resolve(__dirname, "dist");
 if (!fs.existsSync(distPath)) fs.mkdirSync(distPath);
 
