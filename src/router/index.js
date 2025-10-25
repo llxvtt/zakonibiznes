@@ -7,22 +7,26 @@ const router = createRouter({
             {
                   path: "/",
                   name: "home",
+                  meta: { title: "Миграционные услуги в Москве" },
                   component: Home,
             },
             {
                   path: "/about",
                   name: "about",
+                  meta: { title: "О компании" },
                   component: () => import("../pages/About.vue"),
             },
 
             {
                   path: "/blog",
                   name: "blog",
+                  meta: { title: "Блог" },
                   component: () => import("../pages/Blog.vue"),
             },
             {
                   path: "/contacts",
                   name: "contacts",
+                  meta: { title: "Контакты" },
                   component: () => import("../pages/Contacts.vue"),
             },
             {
@@ -48,6 +52,18 @@ const router = createRouter({
                   return { top: 0 };
             }
       },
+});
+
+router.afterEach((to) => {
+      if (to.meta.title) {
+            document.title = to.meta.title;
+      } else if (to.params.id && to.fullPath.includes("/service")) {
+            document.title = "";
+      } else if (to.params.id && to.fullPath.includes("/article")) {
+            document.title = "";
+      } else {
+            document.title = "Закон и Бизнес";
+      }
 });
 
 export default router;

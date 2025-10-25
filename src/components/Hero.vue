@@ -33,11 +33,11 @@ onBeforeUnmount(() => {
                         <h1 class="hero__info-title"><span>Миграционные услуги</span> в москве</h1>
                         <!-- list -->
                         <ul class="hero__info-list">
-                              <li class="hero__info-list--item">Оформление КВОТЫ,</li>
+                              <li class="hero__info-list--item">Оформление КВОТЫ</li>
                               <li class="hero__info-list--item">Получение РВП РФ</li>
                               <li class="hero__info-list--item">Получение ВНЖ РФ</li>
                               <li class="hero__info-list--item">Помощь юрлицам</li>
-                              <li class="hero__info-list--item">Получение гражданства РФ,</li>
+                              <li class="hero__info-list--item">Получение гражданства РФ</li>
                         </ul>
                         <Button class="hero__info-btn" @click="openModal" :title="buttonTitle" :primary="true" size="large" />
                   </div>

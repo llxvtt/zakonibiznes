@@ -2,7 +2,7 @@
 import BreadCrumb from "@/components/BreadCrumb.vue";
 import Consult from "@/components/Consult.vue";
 
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -315,6 +315,18 @@ const articleFunc = () => {
       }
 };
 
+onMounted(() => {
+      if (filteredArticle.value.title) {
+            document.title = filteredArticle.value.title + " | Закон и Бизнес";
+      }
+});
+
+watch(
+      () => filteredArticle.value.title,
+      (newTitle) => {
+            if (newTitle) document.title = newTitle;
+      }
+);
 watch(
       () => route.params.id,
       (newVal) => {

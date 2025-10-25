@@ -4,7 +4,7 @@ import BreadCrumb from "@/components/BreadCrumb.vue";
 import Button from "@/components/Button.vue";
 import { useModal } from "@/composables/modal";
 const { openModal } = useModal();
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 
 const props = defineProps({
       title: String,
@@ -24,6 +24,7 @@ const updateButtonTitle = () => {
 };
 
 onMounted(() => {
+      document.title = props.title;
       updateButtonTitle();
       window.addEventListener("resize", updateButtonTitle);
 });
@@ -31,6 +32,13 @@ onMounted(() => {
 onBeforeUnmount(() => {
       window.removeEventListener("resize", updateButtonTitle);
 });
+
+watch(
+      () => props.title,
+      (newTitle) => {
+            if (newTitle) document.title = newTitle + " | Закон и Бизнес";
+      }
+);
 </script>
 
 <template>
