@@ -404,7 +404,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 13px;
 }
 @media (max-width: 1240px) {
   .header__contact-phone {
@@ -613,7 +613,7 @@ section {
 .header-menu__contacts-phone {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 13px;
 }
 .header-menu__contacts-phone span {
   font-weight: 700;

@@ -105,7 +105,7 @@
             }
             &-phone {
                   @include flex-center;
-                  gap: 20px;
+                  gap: 13px;
 
                   @include media(xl) {
                         display: none;
@@ -319,7 +319,7 @@
             &-phone {
                   display: flex;
                   align-items: center;
-                  gap: 20px;
+                  gap: 13px;
 
                   span {
                         font-weight: 700;
